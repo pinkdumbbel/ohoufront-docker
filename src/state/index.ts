@@ -1,3 +1,11 @@
-//redux 상태관리 관련 폴더
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import counter from './slice/counter';
 
-export {};
+const reducer = combineReducers({
+  counter,
+});
+
+const store = configureStore({ reducer });
+
+export type ReducerType = ReturnType<typeof reducer>;
+export default store;

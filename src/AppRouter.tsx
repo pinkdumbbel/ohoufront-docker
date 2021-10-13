@@ -2,11 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
 
-
-const AppRouter = () => {
+const AppRouter = (): JSX.Element => {
     return (
         <Router>
-            <Route path='/' component={App} />
+            <Route path="/" component={App} />
         </Router>
     );
 };
