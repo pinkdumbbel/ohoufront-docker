@@ -1,3 +1,14 @@
 {
-  "extends": ["plugin:prettier/recommended", "react-app"]
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
+  "extends": ["plugin:prettier/recommended", "react-app", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
 }
