@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
 
 const AppRouter = (): JSX.Element => {
-    return (
-        <Router>
-            <Route path="/" component={App} />
-        </Router>
-    );
+  return (
+    <Router>
+      <Route path="/" component={App} />
+    </Router>
+  );
 };
 
 export default AppRouter;
