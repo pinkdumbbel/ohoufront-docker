@@ -22,5 +22,6 @@
   "prettier.jsxSingleQuote": true,
   "prettier.endOfLine": "auto",
   "editor.formatOnSave": true,
-  "javascript.format.enable": false
+  "javascript.format.enable": false,
+  "typescript.tsdk": "/Users/sinminsub/Desktop/workspace2/ohou-frontend/node_modules/typescript/lib"
 }
