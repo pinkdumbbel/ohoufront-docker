@@ -1,0 +1,80 @@
+header {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+}
+
+.header-navigation {
+  background-color: #fff;
+  border-bottom: 1px solid #ededed;
+}
+
+.header-navigation-content {
+  max-width: 1256px;
+  padding: 10px 60px;
+  height: 80px;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.header-navigation-left {
+  flex: 0 0 auto;
+  align-self: center;
+  top: 50%;
+  left: 50%;
+}
+
+.header-navigation-right {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  right: 8px;
+}
+
+.header-navigation-bar-search {
+  flex: 0 1 266px;
+  margin: 13px 10px 7px 0;
+}
+
+.header-navigation-search-header {
+  display: flex;
+}
+
+.header-navigation-serch-box {
+  flex: 1 0 auto;
+}
+
+.header-navigation-icon {
+  user-select: none;
+  position: relative;
+  margin: 7px 1px;
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.1s;
+  border-radius: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-navigation-icon:hover {
+  background-color: #35c5f0;
+}
+
+.header-navigation-icon:hover .icon {
+  color: #fff;
+}
+
+.header-navigation-icon .icon {
+  height: 24px;
+  transition: color 0.1s;
+  color: #757575;
+}

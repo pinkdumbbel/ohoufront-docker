@@ -1,3 +1,27 @@
 {
-  "editor.formatOnSave": true
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "html", "typescriptreact"],
+  "window.zoomLevel": 0,
+  "files.autoSave": "off",
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.endOfLine": "auto",
+  "editor.formatOnSave": true,
+  "javascript.format.enable": false,
+  "typescript.tsdk": "/Users/sinminsub/Desktop/workspace2/ohou-frontend/node_modules/typescript/lib"
 }
