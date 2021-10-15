@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ReducerType } from './state';
 import { decrement, increment } from './state/slice/counter';
 
-function App(): JSX.Element {
+const App: React.FC = () => {
   const count = useSelector((state: ReducerType) => state.counter.value);
   const dispatch = useDispatch();
 
@@ -14,6 +14,6 @@ function App(): JSX.Element {
       <button onClick={() => dispatch(decrement())}>decrement</button>
     </div>
   );
-}
+};
 
 export default App;

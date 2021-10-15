@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SessionRouter from './SessionRouter';
 
-const AppRouter = (): JSX.Element => {
+const AppRouter: React.FC = () => {
   return (
     <Router>
       <Route path="/" component={SessionRouter} />
