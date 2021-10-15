@@ -1,9 +1,10 @@
 import { createSlice, createAction } from '@reduxjs/toolkit';
 
+const ROOT_SLICE_NAME = 'member'
 const SLICE_NAME = 'login';
 
 const initialState = {
-  authData: {},
+  userData: {},
 };
 
 const sagaAction = {
@@ -28,7 +29,7 @@ const slice = createSlice({
   reducers,
 });
 
-export const getState = (state: any) => state[SLICE_NAME];
+export const getState = (state: any) => state[ROOT_SLICE_NAME][SLICE_NAME];
 export const actions = {
   ...slice.actions,
   ...sagaAction,
