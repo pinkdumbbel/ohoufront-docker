@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LoginPage from './pages/member/login/container/LoginPage';
 import MyPage from './pages/member/myPage/container/MyPage';
-import layout from './pages/layout';
 import App from './App';
+import CategoryPage from './pages/market/category/container/CategoryPage';
 
-const SessionRouter = (): JSX.Element => {
+const SessionRouter: React.FC = () => {
   return (
     <Router>
       <Switch>
@@ -13,7 +13,7 @@ const SessionRouter = (): JSX.Element => {
         <Route path="/myPage" component={MyPage} />
         <Route path="/market" component={App} />
         <Route path="/admin" component={App} />
-        <Route path="/main" component={layout} />
+        <Route path="/" component={CategoryPage} />
       </Switch>
     </Router>
   );

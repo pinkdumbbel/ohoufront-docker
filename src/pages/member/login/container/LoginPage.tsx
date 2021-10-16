@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 
-const LoginPage = (): JSX.Element => {
+const LoginPage: React.FC = () => {
   const [form] = Form.useForm();
 
   const onFinish = (values: any) => {

@@ -1,15 +1,3 @@
-html,
-body,
-#root,
-.layout {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', '맑은 고딕', 'Malgun Gothic', sans-serif;
-  letter-spacing: -0.4px;
-}
-
 ul {
   list-style: none;
   display: block;
@@ -18,49 +6,6 @@ ul {
 
 address {
   font-style: normal;
-}
-
-.layout {
-  display: flex;
-  flex-direction: column;
-}
-
-.feed-container {
-  height: 540px;
-}
-.feed-wrap {
-  margin-right: auto;
-  margin-left: auto;
-  width: 1136px;
-  max-width: 100%;
-  box-sizing: border-box;
-  min-height: 1px;
-  margin-top: 40px;
-}
-
-.feed-row {
-  height: 500px;
-  display: flex;
-  /* flex-wrap: wrap; */
-  box-sizing: border-box;
-}
-
-.feed-sidebar {
-  height: 100%;
-  padding-right: 10px;
-  padding-left: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #7dbcea;
-}
-
-.feed-content {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #108ee9;
 }
 
 .layout-footer {

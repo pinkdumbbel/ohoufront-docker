@@ -4,6 +4,7 @@ div {
 }
 
 header {
+  font-family: sans-serif;
   box-sizing: border-box;
   position: relative;
   display: block;
@@ -38,7 +39,6 @@ button {
   box-sizing: border-box;
   margin: 0 auto;
   align-items: center;
-  background: #7dbcea;
 }
 
 .header-navigation-left {
@@ -58,10 +58,14 @@ button {
 }
 
 .header-navigation-bar-search {
-  height: 100%;
+  display: block;
   flex: 0 1 266px;
   margin: 13px 10px 7px 0;
   min-width: 0;
+}
+
+.header-navigation-search {
+  position: relative;
 }
 
 .header-navigation-search-header {
@@ -157,4 +161,32 @@ button {
 .header-navigation-user-button-caret {
   flex: 0 0 auto;
   margin-left: 3px;
+}
+
+.header-navigation-search-input-text {
+  display: block;
+  width: 100%;
+  padding: 8px 9px 10px 39px;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 20px;
+  background-color: #fff;
+  color: #424242;
+  border: 1px solid #dbdbdb;
+  transition: background-color 0.1s;
+  border-radius: 4px;
+}
+
+.header-navigation-search-input-text:focus {
+  outline: 0;
+}
+
+.header-navigation-search-input-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  color: #757575;
+  pointer-events: none;
 }
