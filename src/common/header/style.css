@@ -177,6 +177,10 @@ button {
   border-radius: 4px;
 }
 
+.header-navigation-search-input-text:hover {
+  background-color: #fafafa;
+}
+
 .header-navigation-search-input-text:focus {
   outline: 0;
 }

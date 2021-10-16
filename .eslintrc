@@ -2,5 +2,8 @@
   "parserOptions": {
     "parser": "@typescript-eslint/parser"
   },
-  "extends": ["react-app", "plugin:@typescript-eslint/recommended"]
+  "extends": ["react-app", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "@typescript-eslint/no-var-requires": 0
+  }
 }

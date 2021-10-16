@@ -1,9 +1,9 @@
 import React from 'react';
-import Logo from '../svg/Logo';
+import Logo from '@/common/svg/Logo';
+import Caret from '@/common/svg/Caret';
+import Cart from '@/common/svg/Cart';
+import SearchIcon from '@/common/svg/SearchIcon';
 import './style.css';
-import Caret from '../svg/Caret';
-import Cart from '../svg/Cart';
-import SearchIcon from '../svg/SearchIcon';
 
 const Header: React.FC = () => {
   const nav = 'header-navigation';
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
                 <div className={`${nav}-search-header`}>
                   <div className={`${nav}-search-box`}>
                     <div className={`${nav}-search-input`}>
-                      <input className={`${nav}-search-input-text`} autoComplete="off" />
+                      <input className={`${nav}-search-input-text`} autoComplete="off" placeholder="스토어 검색" />
                       <SearchIcon className={`${nav}-search-input-icon`} />
                     </div>
                   </div>
