@@ -1,5 +1,7 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
+import 'antd/dist/antd.css';
+import './login.css'
 
 const LoginPage: React.FC = () => {
   const [form] = Form.useForm();
@@ -14,42 +16,44 @@ const LoginPage: React.FC = () => {
 
   return (
     <>
-      <Form
-        form={form}
-        name="basic"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
-        initialValues={{ remember: true }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
-      >
-        <Form.Item
-          label="Username"
-          name="username"
-          rules={[{ required: true, message: 'Please input your username!' }]}
-        >
-          <Input />
-        </Form.Item>
+    <div className="login-page">
+      <div className="login-wrapper">
+        <div className="login-logo">로고</div>
+        <div className="login-form">
+          <Form
+            form={form}
+            name="basic"
+            size="large"
+          >
+            <Form.Item
+              name="username"
+            >
+              <Input style={{ width: '100%' }} />
+            </Form.Item>
 
-        <Form.Item
-          label="Password"
-          name="password"
-          rules={[{ required: true, message: 'Please input your password!' }]}
-        >
-          <Input.Password />
-        </Form.Item>
-
-        <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
-
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+            <Form.Item
+              name="password"
+            >
+              <Input style={{ width: '100%' }} />
+            </Form.Item>
+          </Form>
+        </div>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+        <div>
           <Button type="primary" htmlType="submit">
-            Submit
+            비밀번호 재설정
           </Button>
-        </Form.Item>
-      </Form>
+          <Button type="primary" htmlType="submit">
+            회원가입
+          </Button>
+        </div>
+        <div>
+          sns계정으로 간편 로그인/회원가입
+        </div>
+      </div>
+    </div>
     </>
   );
 };
