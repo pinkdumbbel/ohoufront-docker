@@ -5,7 +5,7 @@ import AppRouter from './AppRouter';
 import reportWebVitals from './reportWebVitals';
 import createStore from './store/store';
 import { Provider } from 'react-redux';
-
+import 'antd/dist/antd.css';
 const store = createStore();
 
 ReactDOM.render(

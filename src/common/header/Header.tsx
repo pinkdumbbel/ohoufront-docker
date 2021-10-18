@@ -3,6 +3,7 @@ import Logo from '@/common/svg/Logo';
 import Caret from '@/common/svg/Caret';
 import Cart from '@/common/svg/Cart';
 import SearchIcon from '@/common/svg/SearchIcon';
+import Input from '@/common/Input';
 import './style.css';
 
 const Header: React.FC = () => {
@@ -24,7 +25,7 @@ const Header: React.FC = () => {
                 <div className={`${nav}-search-header`}>
                   <div className={`${nav}-search-box`}>
                     <div className={`${nav}-search-input`}>
-                      <input className={`${nav}-search-input-text`} autoComplete="off" placeholder="스토어 검색" />
+                      <Input placeholder="스토어 검색" />
                       <SearchIcon className={`${nav}-search-input-icon`} />
                     </div>
                   </div>

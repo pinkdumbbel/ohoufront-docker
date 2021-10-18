@@ -9,8 +9,8 @@ const Footer: React.FC = () => {
     <Footer className="layout-footer">
       <div className="layout-footer-content">
         <ul className="layout-footer-shortcut">
-          {footerItems.map((item) => (
-            <li>
+          {footerItems.map((item, i) => (
+            <li key={i}>
               <span className="layout-footer-shortcut-item">{item}</span>
             </li>
           ))}
