@@ -44,7 +44,7 @@ div {
 }
 
 .expert-form-group {
-  padding: 20px 0;
+  padding: 25px 0;
 }
 
 .edit-user-info-form-item-group {
@@ -56,6 +56,9 @@ div {
   padding: 20px 0;
 }
 
+.expert-form-group-gender {
+  padding: 32px 0;
+}
 .email-input {
   display: flex;
 }
@@ -91,110 +94,6 @@ div {
   text-align: center;
   line-height: 40px;
   color: #dbdbdb;
-}
-
-.edit-user-info-form-item-field-sex,
-.edit-user-info-form-item-field-sex .round-checkbox-input-label {
-  display: flex;
-}
-
-.edit-user-info-form-item-field {
-  position: relative;
-}
-
-.edit-user-info div.expert-form-group.edit-user-info-form-item-group .radio-group-input > li {
-  width: 50%;
-}
-
-.radio-group-input > li {
-  display: inline-block;
-  padding: 0px 5px;
-  width: 50%;
-  box-sizing: border-box;
-}
-
-.form-radio {
-  flex: 1 1 auto;
-}
-
-.radio-group-input > li .form-radio > .form-radio-label {
-  margin-bottom: 0;
-  font-size: 15px;
-}
-
-.form-radio > .form-radio-label,
-.form-radio .form-check-label,
-.form-check > .form-radio-label,
-.form-check .form-check-label {
-  cursor: pointer;
-  display: block;
-  margin-bottom: 10px;
-  padding-left: 32px;
-  min-height: 22px;
-  line-height: 22px;
-  position: relative;
-}
-
-.form-radio > .form-radio-label > .form-radio,
-.form-radio > .form-radio-label .form-check,
-.form-radio .form-check-label > .form-radio,
-.form-radio .form-check-label .form-check,
-.form-check > .form-radio-label > .form-radio,
-.form-check > .form-radio-label .form-check,
-.form-check .form-check-label > .form-radio,
-.form-check .form-check-label .form-check {
-  left: -1000px;
-  position: absolute;
-  opacity: 0;
-}
-
-.form-radio,
-.form-check {
-  font-size: 13px;
-  flex: 1 1 auto;
-}
-
-.form-radio > .form-radio-label > .radio-img,
-.form-radio .form-check-label > .radio-img,
-.form-check > .form-radio-label > .radio-img,
-.form-check .form-check-label > .radio-img {
-  box-sizing: border-box;
-  height: 22px;
-  width: 22px;
-  border-radius: 12px;
-  background-color: #ffffff;
-  border: solid 1px #dbdbdb;
-  display: block;
-  transition: 0.2s ease;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.form-radio > .form-radio-label .form-radio:not(:disabled):checked + .radio-img:after,
-.form-radio .form-check-label .form-radio:not(:disabled):checked + .radio-img:after,
-.form-check > .form-radio-label .form-radio:not(:disabled):checked + .radio-img:after,
-.form-check .form-check-label .form-radio:not(:disabled):checked + .radio-img:after {
-  width: 22px;
-  height: 22px;
-  border-width: 7px;
-}
-
-.form-radio > .form-radio-label > .radio-img:after,
-.form-radio .form-check-label > .radio-img:after,
-.form-check > .form-radio-label > .radio-img:after,
-.form-check .form-check-label > .radio-img:after {
-  content: '';
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: #ffffff;
-  border-radius: 11px;
-  transition: 0.2s ease;
-  border: solid 0 #35c5f0;
 }
 
 .edit-user-info-form-item-field-profile,
@@ -240,73 +139,12 @@ div {
   width: 100%;
   height: 100%;
 }
-/* .edit-user-info-form-item-field {
-  position: relative;
-}
 
-.edit-user-info-form-item-field-sex {
-  display: flex;
+.edit-user-info-submit-btn {
+  margin: 50px 0 0 100px;
+  width: 290px;
+  padding: 11px 10px;
+  font-size: 17px;
+  line-height: 26px;
+  height: auto;
 }
-
-.radio-group-input li {
-  display: inline-block;
-  width: 50%;
-  padding: 0px 5px;
-  box-sizing: border-box;
-}
-
-.form-radio {
-  flex: 1 1 auto;
-}
-
-.form-radio .form-radio-label .form-radio {
-  flex: 1 1 auto;
-  position: absolute;
-  left: -1000px;
-  opacity: 0;
-}
-
-.form-radio-label {
-  margin-bottom: 0;
-  font-size: 15px;
-  cursor: pointer;
-  display: block;
-  padding-left: 32px;
-  min-height: 22px;
-  line-height: 22px;
-  position: relative;
-}
-
-.form-radio .form-radio-label .radio-img {
-  box-sizing: border-box;
-  height: 22px;
-  width: 22px;
-  border-radius: 12px;
-  border: solid 1px #dbdbdb;
-  display: block;
-  transition: 0.2s ease;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.form-radio .form-radio-label .form-radio:not(:disabled):checked + .radio-img::after {
-  width: 22px;
-  height: 22px;
-  border-width: 7px;
-}
-
-.form-radio .form-radio-label .radio-img:after {
-  content: '';
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: #ffffff;
-  border-radius: 11px;
-  transition: 0.2s ease;
-  border: solid 0 #35c5f0;
-}
- */

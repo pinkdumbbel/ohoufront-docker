@@ -3,6 +3,7 @@ import Header from '@/common/Header';
 import Footer from '@/common/Footer';
 import './style.css';
 import { Radio } from 'antd';
+import { Button } from 'antd';
 
 /* import Input from '@/common/Input'; */
 
@@ -69,7 +70,7 @@ const MyPage: React.FC = () => {
           <div className={`${editUserFromItem}`}>
             <div className={`${editUserFromItem}-title`}>성별</div>
 
-            <div className={`${editUserFromItem}-group expert-form-group`}>
+            <div className={`${editUserFromItem}-group expert-form-group expert-form-group-gender`}>
               <div className="expert-form-group-content">
                 <Radio.Group>
                   <Radio value="m">남성</Radio>
@@ -114,20 +115,9 @@ const MyPage: React.FC = () => {
               </div>
             </div>
           </div>
-
-          {/* <div className={`${editUserFromItem}`}>
-            <div className={`${editUserFromItem}-title`}>한줄소개</div>
-
-            <div className={`${editUserFromItem}-group expert-form-group`}>
-              <div className="expert-form-group-content">
-                <div className="expert-form-group-input">
-                  <div className="edit-user-info-form-item-field">
-                    <input className="form-control" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
+          <Button type="primary" className={`${editUser}-submit-btn`}>
+            회원 정보 수정
+          </Button>
         </form>
       </div>
 
