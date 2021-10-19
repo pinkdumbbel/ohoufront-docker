@@ -1,0 +1,21 @@
+.default-input {
+  display: block;
+  width: 100%;
+  padding: 8px 9px 10px 39px;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 20px;
+  background-color: #fff;
+  color: #424242;
+  border: 1px solid #dbdbdb;
+  transition: background-color 0.1s;
+  border-radius: 4px;
+}
+
+.default-input:hover {
+  background-color: #fafafa;
+}
+
+.default-input:focus {
+  outline: none;
+}
