@@ -8,10 +8,8 @@ const AppLayout: React.FC = () => {
     <div className="feed-container">
       <div className="feed-wrap">
         <div className="feed-row">
-          <Sider width={300} className="feed-sidebar">
-            Sidebar
-          </Sider>
-          <Content className="feed-content">Content</Content>
+          <Sider width={300} className="feed-sidebar"></Sider>
+          <Content className="feed-content"></Content>
         </div>
       </div>
     </div>

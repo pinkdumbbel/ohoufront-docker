@@ -14,7 +14,7 @@ const MyPage: React.FC = () => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
 
       <div className={`${editUser}-wrap`}>
         <div className={`${editUser}-header`}>

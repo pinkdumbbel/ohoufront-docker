@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '@/common/svg/Logo';
 import Caret from '@/common/svg/Caret';
 import Cart from '@/common/svg/Cart';
@@ -6,7 +6,11 @@ import SearchIcon from '@/common/svg/SearchIcon';
 import Input from '@/common/input/Input';
 import './style.css';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onUserMenu: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onUserMenu }) => {
   const nav = 'header-navigation';
 
   return (
@@ -38,7 +42,7 @@ const Header: React.FC = () => {
             </a>
 
             <div className={`${nav}-user-drop-down`}>
-              <button className={`${nav}-user-button`} type="button">
+              <button className={`${nav}-user-button`} type="button" onClick={onUserMenu}>
                 <div className={`${nav}-user-button-img`}>
                   <img
                     className="image"

@@ -72,7 +72,7 @@ button {
   display: flex;
 }
 
-.header-navigation-serch-box {
+.header-navigation-search-box {
   flex: 1 0 auto;
 }
 
@@ -175,4 +175,17 @@ button {
   height: 20px;
   color: #757575;
   pointer-events: none;
+}
+
+.header-navigation-bar-user-menu {
+  width: 200px;
+  margin: 0 -1px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 18%);
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
 }

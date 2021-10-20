@@ -22,16 +22,10 @@
   height: 100%;
   padding-right: 10px;
   padding-left: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #7dbcea;
 }
 
 .feed-content {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #108ee9;
 }

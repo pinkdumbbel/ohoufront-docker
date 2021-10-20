@@ -4,9 +4,11 @@ import SessionRouter from './SessionRouter';
 
 const AppRouter: React.FC = () => {
   return (
-    <Router>
-      <Route path="/" component={SessionRouter} />
-    </Router>
+    <>
+      <Router>
+        <Route path="/" component={SessionRouter} />
+      </Router>
+    </>
   );
 };
 
