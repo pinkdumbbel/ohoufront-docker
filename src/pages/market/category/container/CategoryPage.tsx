@@ -4,21 +4,18 @@ import Footer from '@/common/footer/Footer';
 import AppLayout from '@/common/applayout/AppLayout';
 import Popout from '@/common/popout/Popout';
 import './style.css';
-import useUserMenu from '@/hooks/useUserMenu';
 
 const CategoryPage: React.FC = () => {
-  const [userMenu, setUserMenu] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  const onUserMenu = () => {
-    setUserMenu((prev) => !prev);
-  };
+  const onMounted = () => setIsMounted(!isMounted);
 
   return (
     <>
-      <Header onUserMenu={onUserMenu} />
+      <Header onMounted={onMounted} />
       <AppLayout />
       <Footer />
-      {userMenu && <Popout userMenu={userMenu} />}
+      <Popout isMounted={isMounted} />
     </>
   );
 };

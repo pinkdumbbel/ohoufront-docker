@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/common/header/Header';
 import Footer from '@/common/footer/Footer';
 import './style.css';
 import { Radio } from 'antd';
 import { Button } from 'antd';
+import Popout from '@/common/popout/Popout';
 
 /* import Input from '@/common/Input'; */
 
@@ -12,9 +13,11 @@ const MyPage: React.FC = () => {
   const editUserFromItem = 'edit-user-info-form-item';
   const emails = ['naver.com', 'daum.net', 'gmail.com', '직접입력'];
 
+  const [isMounted, setIsMounted] = useState(false);
+  const onMounted = () => setIsMounted(!isMounted);
   return (
     <>
-      {/* <Header /> */}
+      <Header onMounted={onMounted} />
 
       <div className={`${editUser}-wrap`}>
         <div className={`${editUser}-header`}>
@@ -122,6 +125,7 @@ const MyPage: React.FC = () => {
       </div>
 
       <Footer />
+      <Popout isMounted={isMounted} />
     </>
   );
 };

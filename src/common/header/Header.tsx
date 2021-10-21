@@ -7,10 +7,10 @@ import Input from '@/common/input/Input';
 import './style.css';
 
 interface HeaderProps {
-  onUserMenu: () => void;
+  onMounted: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onUserMenu }) => {
+const Header: React.FC<HeaderProps> = ({ onMounted }) => {
   const nav = 'header-navigation';
 
   return (
@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ onUserMenu }) => {
             </a>
 
             <div className={`${nav}-user-drop-down`}>
-              <button className={`${nav}-user-button`} type="button" onClick={onUserMenu}>
+              <button className={`${nav}-user-button`} type="button" onClick={onMounted}>
                 <div className={`${nav}-user-button-img`}>
                   <img
                     className="image"

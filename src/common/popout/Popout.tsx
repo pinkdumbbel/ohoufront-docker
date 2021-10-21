@@ -1,25 +1,56 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
-const Popout: React.FC<{ userMenu: boolean }> = ({ userMenu }) => {
-  /* const style: React.CSSProperties = !userMenu
-    ? { display: 'none' }
-    : {
-        display: 'block',
-        position: 'absolute',
-        zIndex: 1000,
-        top: '70px',
-        right: '187.5px',
-      }; */
 
-  //animated-popout header-navigation-bar-user-section-content
+interface PopOutProps {
+  isMounted: boolean;
+}
+
+function useDelayUnmount(isMounted: boolean, delay: number): boolean {
+  const [showUserMenu, setShowUserMenu] = useState(false);
+
+  useEffect(() => {
+    let timeOutId: ReturnType<typeof setTimeout>;
+
+    if (isMounted && !showUserMenu) setShowUserMenu(true);
+    else if (!isMounted && showUserMenu) timeOutId = setTimeout(() => setShowUserMenu(false), delay);
+
+    return () => clearTimeout(timeOutId);
+  }, [isMounted, showUserMenu, delay]);
+
+  return showUserMenu;
+}
+const Popout: React.FC<PopOutProps> = ({ isMounted }) => {
+  const showUserMenu = useDelayUnmount(isMounted, 10);
+  const mountedStyle: React.CSSProperties = {
+    animation: 'inAnimation 200ms ease-in',
+    display: 'block',
+    position: 'absolute',
+    zIndex: 1000,
+    top: '70px',
+    right: '187.5px',
+  };
+  const unmountedStyle: React.CSSProperties = {
+    animation: 'outAnimation 200ms ease-out',
+    animationFillMode: 'forwards',
+  };
   return (
-    <div>
-      <div className="popout" /* style={style} */>
-        <div className={[userMenu && 'animated-popout', 'header-navigation-bar-user-section-content'].join(' ')}>
-          <ul className="header-navigation-bar-user-menu"></ul>
+    <>
+      {showUserMenu && (
+        <div className="popout" style={isMounted ? mountedStyle : unmountedStyle}>
+          <div className="animated-popout header-navigation-bar-user-section-content">
+            <ul className="header-navigation-bar-user-menu">
+              {['마이페이지', '비밀번호설정', '로그아웃'].map((menu) => (
+                <li>
+                  <a className="header-navigation-bar-user-menu-item" href="#!">
+                    {menu}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
