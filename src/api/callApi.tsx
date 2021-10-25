@@ -8,7 +8,7 @@ interface callApiPramsType {
   method: Method;
   params?: unknown;
   data: unknown;
-  responseType: ResponseType;
+  // responseType?: string;
 }
 
 /**
@@ -21,8 +21,8 @@ export default function callApi({
   method = 'get',
   params,
   data,
-  responseType,
-}: callApiPramsType): Promise<AxiosResponse> {
+}: // responseType,
+callApiPramsType): Promise<AxiosResponse> {
   const api_url = BASE_URL + 'api' + url;
   const headers = {
     'Content-Type': 'applicaiton/json;charset=UTF-8',
@@ -34,13 +34,13 @@ export default function callApi({
     url: api_url,
     params,
     data,
-    responseType,
+    // responseType,
     headers,
     withCredentials: true,
   })
     .then((response) => {
       console.log('response:', response);
-      response.isSuccess = true;
+      // response.isSuccess = true;
       return response;
     })
     .catch((error) => error);
