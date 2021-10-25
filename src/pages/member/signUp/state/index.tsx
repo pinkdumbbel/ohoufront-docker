@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const sagaAction = {
-  join: createAction(`${SLICE_NAME}/join`),
+  signUpSubmit: createAction(`${SLICE_NAME}/signUpSubmit`),
 };
 
 const reducers = {
