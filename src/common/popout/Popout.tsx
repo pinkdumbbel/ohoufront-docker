@@ -22,7 +22,7 @@ function useDelayUnmount(isMounted: boolean, delay: number): boolean {
 const Popout: React.FC<PopOutProps> = ({ isMounted }) => {
   const showUserMenu = useDelayUnmount(isMounted, 10);
   const mountedStyle: React.CSSProperties = {
-    animation: 'inAnimation 200ms ease-in',
+    animation: 'inAnimation 100ms ease-in',
     display: 'block',
     position: 'absolute',
     zIndex: 1000,
@@ -30,8 +30,9 @@ const Popout: React.FC<PopOutProps> = ({ isMounted }) => {
     right: '187.5px',
   };
   const unmountedStyle: React.CSSProperties = {
-    animation: 'outAnimation 200ms ease-out',
+    animation: 'outAnimation 100ms ease-out',
     animationFillMode: 'forwards',
+    display: 'none',
   };
   return (
     <>
@@ -39,8 +40,8 @@ const Popout: React.FC<PopOutProps> = ({ isMounted }) => {
         <div className="popout" style={isMounted ? mountedStyle : unmountedStyle}>
           <div className="animated-popout header-navigation-bar-user-section-content">
             <ul className="header-navigation-bar-user-menu">
-              {['마이페이지', '비밀번호설정', '로그아웃'].map((menu) => (
-                <li>
+              {['마이페이지', '비밀번호설정', '로그아웃'].map((menu, i) => (
+                <li key={i}>
                   <a className="header-navigation-bar-user-menu-item" href="#!">
                     {menu}
                   </a>

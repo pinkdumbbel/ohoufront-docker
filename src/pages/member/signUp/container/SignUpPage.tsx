@@ -12,7 +12,7 @@ const SignUpPage: React.FC = () => {
   const signUpSubmit = () => {
     const formData = form.getFieldsValue();
     console.log('formData', formData);
-    // dispatch(actions.join(formData));
+    dispatch(actions.join(formData));
   };
 
   return (

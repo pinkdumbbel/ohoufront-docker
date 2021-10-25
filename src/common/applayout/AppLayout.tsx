@@ -1,18 +1,20 @@
-import React from 'react';
-import { Layout } from 'antd';
-import './style.css';
+import React, { useState } from 'react';
+import Header from '@/common/header/Header';
+import Footer from '@/common/footer/Footer';
+import Popout from '@/common/popout/Popout';
 
-const AppLayout: React.FC = () => {
-  const { Sider, Content } = Layout;
+const AppLayout: React.FC = ({ children }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  const onMounted = () => setIsMounted(!isMounted);
+
   return (
-    <div className="feed-container">
-      <div className="feed-wrap">
-        <div className="feed-row">
-          <Sider width={300} className="feed-sidebar"></Sider>
-          <Content className="feed-content"></Content>
-        </div>
-      </div>
-    </div>
+    <>
+      <Header onMounted={onMounted} />
+      {children}
+      <Footer />
+      <Popout isMounted={isMounted} />
+    </>
   );
 };
 

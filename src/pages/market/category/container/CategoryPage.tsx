@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import Header from '@/common/header/Header';
-import Footer from '@/common/footer/Footer';
+import React from 'react';
 import AppLayout from '@/common/applayout/AppLayout';
-import Popout from '@/common/popout/Popout';
+import { Layout } from 'antd';
 import './style.css';
 
 const CategoryPage: React.FC = () => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  const onMounted = () => setIsMounted(!isMounted);
+  const { Sider, Content } = Layout;
 
   return (
-    <>
-      <Header onMounted={onMounted} />
-      <AppLayout />
-      <Footer />
-      <Popout isMounted={isMounted} />
-    </>
+    <AppLayout>
+      <div className="feed-container">
+        <div className="feed-wrap">
+          <div className="feed-row">
+            <Sider width={300} className="feed-sidebar"></Sider>
+            <Content className="feed-content"></Content>
+          </div>
+        </div>
+      </div>
+    </AppLayout>
   );
 };
 

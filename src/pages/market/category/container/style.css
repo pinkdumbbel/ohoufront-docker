@@ -14,3 +14,35 @@ body,
   display: flex;
   flex-direction: column;
 }
+
+.feed-container {
+  height: 540px;
+}
+.feed-wrap {
+  margin-right: auto;
+  margin-left: auto;
+  width: 1136px;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: 1px;
+  margin-top: 40px;
+}
+
+.feed-row {
+  height: 500px;
+  display: flex;
+  /* flex-wrap: wrap; */
+  box-sizing: border-box;
+}
+
+.feed-sidebar {
+  height: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: #7dbcea;
+}
+
+.feed-content {
+  width: 100%;
+  background: #108ee9;
+}

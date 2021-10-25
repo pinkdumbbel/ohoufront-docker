@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Logo from '@/common/svg/Logo';
 import Caret from '@/common/svg/Caret';
 import Cart from '@/common/svg/Cart';

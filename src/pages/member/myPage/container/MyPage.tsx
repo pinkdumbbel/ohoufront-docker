@@ -84,20 +84,6 @@ const MyPage: React.FC = () => {
           </div>
 
           <div className={`${editUserFromItem}`}>
-            <div className={`${editUserFromItem}-title`}>생년월일</div>
-
-            <div className={`${editUserFromItem}-group expert-form-group`}>
-              <div className="expert-form-group-content">
-                <div className="expert-form-group-input">
-                  <div className="edit-user-info-form-item-field">
-                    <input className="form-control" placeholder="YYYY-MM-DD" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={`${editUserFromItem}`}>
             <div className={`${editUserFromItem}-title`}>프로필 이미지</div>
 
             <div className={`expert-form-group ${editUserFromItem}-group`}>

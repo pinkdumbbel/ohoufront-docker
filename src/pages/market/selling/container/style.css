@@ -1,0 +1,78 @@
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+.production-selling {
+  position: relative;
+  min-height: 1px;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+  width: 1136px;
+  max-width: 100%;
+  min-height: 1px;
+}
+
+.production-selling-overview-category {
+  display: block;
+  margin: 20px 0 0;
+  padding: 0;
+  border: none;
+}
+
+.commerce-category-breadcrumb .commerce-category-breadcrumb-entry {
+  display: inline-block;
+  margin-right: 2px;
+  color: #757575;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.commerce-category-breadcrumb-entry > .icon {
+  margin-left: 5px;
+  width: 10px;
+  height: 10px;
+  color: #bdbdbd;
+  vertical-align: -1px;
+}
+
+.production-selling-overview-container {
+  margin-top: 40px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.production-selling-overview-cover-image-wrap {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.production-selling-cover-image-container {
+  position: relative;
+}
+
+.carousel {
+  position: relative;
+}
+
+.production-selling-overview-cover-image {
+  margin: 0 30px 0 0;
+}
+
+.carousel-list-wrap {
+  overflow: hidden;
+}
+
+.production-selling-cover-image-carousel-wrap {
+  border-radius: 10px;
+}
