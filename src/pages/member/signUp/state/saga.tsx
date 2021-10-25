@@ -8,7 +8,7 @@ interface payloadType {
   payload: unknown;
 }
 
-function* join({ payload }: payloadType) {
+function* signUpSubmit({ payload }: payloadType) {
   const { isSuccess, data } = yield call(callApi, {
     url: '/join',
     method: 'post',
@@ -22,5 +22,5 @@ function* join({ payload }: payloadType) {
 }
 
 export function* watchUnsplach() {
-  yield all([takeLatest(actions.join, join)]);
+  yield all([takeLatest(actions.signUpSubmit, signUpSubmit)]);
 }
