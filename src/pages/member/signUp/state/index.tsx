@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const sagaAction = {
-  signUpSubmit: createAction(`${SLICE_NAME}/signUpSubmit`),
+  signUpSubmit: createAction<unknown>(`${SLICE_NAME}/signUpSubmit`),
 };
 
 const reducers = {

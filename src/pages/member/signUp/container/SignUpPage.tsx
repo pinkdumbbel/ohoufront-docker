@@ -4,7 +4,7 @@ import 'antd/dist/antd.css';
 import './signUp.css';
 import OhousLogin from '@/common/svg/OhousLogin';
 import { useDispatch } from 'react-redux';
-import { actions } from '../../login/state';
+import { actions } from '../state';
 
 const SignUpPage: React.FC = () => {
   const [form] = Form.useForm();
@@ -12,7 +12,7 @@ const SignUpPage: React.FC = () => {
   const signUpSubmit = () => {
     const formData = form.getFieldsValue();
     console.log('formData', formData);
-    //dispatch(actions.signUpSubmit(formData));
+    dispatch(actions.signUpSubmit(formData));
   };
 
   return (
