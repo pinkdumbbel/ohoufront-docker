@@ -1,7 +1,7 @@
 import axios, { AxiosResponse, Method, ResponseType } from 'axios';
 
 // // const BASE_URL = process.env.REACT_APP_BASE_URL;
-const BASE_URL = '/';
+const BASE_URL = 'http://ec2-54-91-208-116.compute-1.amazonaws.com:8080/';
 
 interface callApiPramsType {
   url: string;

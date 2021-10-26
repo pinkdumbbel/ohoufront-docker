@@ -4,16 +4,17 @@ import 'antd/dist/antd.css';
 import './login.css';
 import { DownloadOutlined } from '@ant-design/icons';
 import OhousLogin from '@/common/svg/OhousLogin';
+import { actions } from '../state';
+import { useDispatch } from 'react-redux';
 
 const LoginPage: React.FC = () => {
   const [form] = Form.useForm();
+  const dispatch = useDispatch();
 
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
-  };
-
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
+  const loginSubmit = () => {
+    const formData = form.getFieldsValue();
+    console.log('formData', formData);
+    dispatch(actions.login(formData));
   };
 
   return (
@@ -38,6 +39,7 @@ const LoginPage: React.FC = () => {
               block
               type="primary"
               htmlType="submit"
+              onClick={loginSubmit}
             >
               로그인
             </Button>

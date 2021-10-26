@@ -10,7 +10,7 @@ const SessionRouter: React.FC = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/login" component={LoginPage} />
+        <Route path="/login" component={LoginPage} exact />
         <Route path="/signUp" component={SignUpPage} />
         <Route path="/myPage" component={MyPage} />
         <Route path="/market" component={App} />

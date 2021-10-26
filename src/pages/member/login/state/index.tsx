@@ -1,6 +1,6 @@
 import { createSlice, createAction } from '@reduxjs/toolkit';
 
-const ROOT_SLICE_NAME = 'member'
+const ROOT_SLICE_NAME = 'member';
 const SLICE_NAME = 'login';
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const sagaAction = {
-  fetchPostLogin: createAction(`${SLICE_NAME}/fetchPostLogin`),
+  login: createAction<unknown>(`${SLICE_NAME}/login`),
 };
 
 const reducers = {

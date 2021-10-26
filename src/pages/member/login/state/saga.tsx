@@ -1,24 +1,24 @@
 import { all, call, put, select, takeLatest } from 'redux-saga/effects';
 import { actions, getState } from '.';
-// import callApi from '../../../../api/callApi';
+import callApi from '@/api/callApi';
 
-function* fetchPostLogin() {
-  console.log('test')
-  // const userData = yield select((state) => getState(state).userData);
+interface payloadType {
+  payload: unknown;
+}
 
-  // const { isSuccess, data } = yield call(callApi, {
-  //   url: '/',
-  //   method: 'post',
-  //   data: userData,
-  // });
+function* login({ payload }: payloadType) {
+  const { isSuccess, data } = yield call(callApi, {
+    url: '/auth/login',
+    method: 'post',
+    params: '',
+    data: payload,
+  });
 
-  // if(isSuccess && data) {
-  //   yield put(actions.setValue('userData', data.list));
-  // }
+  if (isSuccess && data) {
+    yield put(actions.setValue('userData', data.list));
+  }
 }
 
 export function* watchUnsplach() {
-  yield all([
-    takeLatest(actions.fetchPostLogin,fetchPostLogin),
-  ])
+  yield all([takeLatest(actions.login, login)]);
 }

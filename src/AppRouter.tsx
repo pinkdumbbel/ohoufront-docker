@@ -7,8 +7,8 @@ const AppRouter: React.FC = () => {
   return (
     <>
       <Router>
-        <Route path="/" component={SessionRouter} exact />
-        <Route path="/productions" component={ProductRouter} />
+        <Route path="/" component={SessionRouter} />
+        {/* <Route path="/productions" component={ProductRouter} /> */}
       </Router>
     </>
   );
