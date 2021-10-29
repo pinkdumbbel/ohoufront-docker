@@ -6,6 +6,7 @@ import { DownloadOutlined } from '@ant-design/icons';
 import OhousLogin from '@/common/svg/OhousLogin';
 import { actions } from '../state';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 
 const LoginPage: React.FC = () => {
   const [form] = Form.useForm();
@@ -21,11 +22,10 @@ const LoginPage: React.FC = () => {
     <>
       <div className="login-page">
         <div className="login-wrapper">
-          {/* <img className="login-logo" src="logo_login.png" alt="login-logo" width="150" height="50"/> */}
           <OhousLogin />
           <div className="login-form">
             <Form form={form} name="basic" size="large">
-              <Form.Item name="username">
+              <Form.Item name="email">
                 <Input size="large" placeholder="이메일" style={{ width: 300 }} />
               </Form.Item>
 

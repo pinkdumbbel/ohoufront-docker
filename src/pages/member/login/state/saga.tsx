@@ -7,14 +7,13 @@ interface payloadType {
 }
 
 function* login({ payload }: payloadType) {
-  const { isSuccess, data } = yield call(callApi, {
+  const { status, data } = yield call(callApi, {
     url: '/auth/login',
     method: 'post',
-    params: '',
     data: payload,
   });
 
-  if (isSuccess && data) {
+  if (status === 200 && data) {
     yield put(actions.setValue('userData', data.list));
   }
 }

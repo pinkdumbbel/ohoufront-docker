@@ -1,7 +1,7 @@
 import axios, { AxiosResponse, Method, ResponseType } from 'axios';
 
 // // const BASE_URL = process.env.REACT_APP_BASE_URL;
-const BASE_URL = 'http://ec2-54-91-208-116.compute-1.amazonaws.com:8080/';
+const BASE_URL = 'http://ec2-54-91-208-116.compute-1.amazonaws.com:8080';
 
 interface callApiPramsType {
   url: string;
@@ -23,24 +23,17 @@ export default function callApi({
   data,
 }: // responseType,
 callApiPramsType): Promise<AxiosResponse> {
-  const api_url = BASE_URL + 'api' + url;
-  const headers = {
-    'Content-Type': 'applicaiton/json;charset=UTF-8',
-    'Access-Control-Allow-Origin': '*',
-  };
-  console.log('api_url === ', api_url);
+  const api_url = BASE_URL + '/api' + url;
+  const headers = { 'Content-Type': 'application/json' };
   return axios({
     method,
     url: api_url,
-    params,
     data,
-    // responseType,
+    params,
     headers,
-    withCredentials: true,
   })
     .then((response) => {
       console.log('response:', response);
-      // response.isSuccess = true;
       return response;
     })
     .catch((error) => error);
