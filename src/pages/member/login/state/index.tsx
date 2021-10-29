@@ -4,7 +4,7 @@ const ROOT_SLICE_NAME = 'member';
 const SLICE_NAME = 'login';
 
 const initialState = {
-  userData: {},
+  userToken: 'test',
 };
 
 const sagaAction = {

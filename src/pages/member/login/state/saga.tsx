@@ -14,7 +14,7 @@ function* login({ payload }: payloadType) {
   });
 
   if (status === 200 && data) {
-    yield put(actions.setValue('userData', data.list));
+    yield put(actions.setValue('userToken', data));
   }
 }
 

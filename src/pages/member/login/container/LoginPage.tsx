@@ -6,7 +6,6 @@ import { DownloadOutlined } from '@ant-design/icons';
 import OhousLogin from '@/common/svg/OhousLogin';
 import { actions } from '../state';
 import { useDispatch } from 'react-redux';
-import axios from 'axios';
 
 const LoginPage: React.FC = () => {
   const [form] = Form.useForm();

@@ -25,6 +25,7 @@ export default function callApi({
 callApiPramsType): Promise<AxiosResponse> {
   const api_url = BASE_URL + '/api' + url;
   const headers = { 'Content-Type': 'application/json' };
+  console.log('토큰 유효성 검증', new Date());
   return axios({
     method,
     url: api_url,
