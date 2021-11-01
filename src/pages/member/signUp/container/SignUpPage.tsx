@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 import 'antd/dist/antd.css';
 import './signUp.css';
 import OhousLogin from '@/common/svg/OhousLogin';
-import { useDispatch } from 'react-redux';
-import { actions } from '../state';
+import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import { actions, getState } from '../state';
+import { RouteComponentProps } from 'react-router';
 
-const SignUpPage: React.FC = () => {
+const SignUpPage: React.FC<RouteComponentProps> = (props) => {
   const [form] = Form.useForm();
   const dispatch = useDispatch();
+  const isSignedUp = useSelector((state) => getState(state).isSignedUp);
+
+  useEffect(() => {
+    console.log('isSignedUp', isSignedUp);
+    if (isSignedUp) {
+      const newPath = { pathname: '/login' };
+      console.log('newPath', newPath);
+      props.history.push(newPath);
+    }
+  }, [isSignedUp]);
+
   const signUpSubmit = () => {
     const formData = form.getFieldsValue();
-    console.log('formData', formData);
+    console.log('signUp data', formData);
     dispatch(actions.signUpSubmit(formData));
   };
 
@@ -65,7 +78,10 @@ const SignUpPage: React.FC = () => {
             </Button>
           </Form>
           <p className="signup-bottom-message">
-            이미 아이디가 있으신가요?<a className="login-link">로그인</a>
+            이미 아이디가 있으신가요?
+            <NavLink to="/login" activeClassName="login-link">
+              로그인
+            </NavLink>
           </p>
         </div>
       </div>

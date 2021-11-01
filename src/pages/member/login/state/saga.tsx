@@ -6,7 +6,7 @@ interface payloadType {
   payload: unknown;
 }
 
-function* login({ payload }: payloadType) {
+function* fetchLogin({ payload }: payloadType) {
   const { status, data } = yield call(callApi, {
     url: '/auth/login',
     method: 'post',
@@ -14,10 +14,10 @@ function* login({ payload }: payloadType) {
   });
 
   if (status === 200 && data) {
-    yield put(actions.setValue('userToken', data));
+    yield put(actions.setUserState({ userToken: data.data.AccessToken, certifyYn: true }));
   }
 }
 
 export function* watchUnsplach() {
-  yield all([takeLatest(actions.login, login)]);
+  yield all([takeLatest(actions.fetchLogin, fetchLogin)]);
 }

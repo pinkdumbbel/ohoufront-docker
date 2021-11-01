@@ -5,10 +5,11 @@ const SLICE_NAME = 'login';
 
 const initialState = {
   userToken: 'test',
+  certifyYn: false,
 };
 
 const sagaAction = {
-  login: createAction<unknown>(`${SLICE_NAME}/login`),
+  fetchLogin: createAction<unknown>(`${SLICE_NAME}/fetchLogin`),
 };
 
 const reducers = {
@@ -20,6 +21,10 @@ const reducers = {
     prepare: (key: any, value: any) => {
       return { payload: { key, value } };
     },
+  },
+  setUserState: (state: any, { payload: { userToken, certifyYn } }: any) => {
+    state.userToken = userToken;
+    state.certifyYn = certifyYn;
   },
 };
 

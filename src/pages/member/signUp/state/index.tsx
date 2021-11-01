@@ -4,7 +4,7 @@ const ROOT_SLICE_NAME = 'member';
 const SLICE_NAME = 'signUp';
 
 const initialState = {
-  userData: {},
+  isSignedUp: false,
 };
 
 const sagaAction = {

@@ -7,15 +7,13 @@ interface payloadType {
 }
 
 function* signUpSubmit({ payload }: payloadType) {
-  const { isSuccess, data } = yield call(callApi, {
+  const { status, data } = yield call(callApi, {
     url: '/join',
     method: 'post',
-    params: '',
     data: payload,
   });
-
-  if (isSuccess && data) {
-    yield put(actions.setValue('userData', data.list));
+  if (status === 201 && data) {
+    yield put(actions.setValue('isSignedUp', true));
   }
 }
 
