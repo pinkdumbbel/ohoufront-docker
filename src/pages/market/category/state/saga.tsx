@@ -1,0 +1,23 @@
+import { all, call, put, select, takeLatest } from 'redux-saga/effects';
+import { actions, getState } from '.';
+import callApi from '@/api/callApi';
+
+interface payloadType {
+  payload: unknown;
+}
+
+function* getCategoryTree({ payload }: payloadType) {
+  const { status, data } = yield call(callApi, {
+    url: '/category',
+    method: 'get',
+    data: payload,
+  });
+
+  if (status === 200 && data) {
+    console.log('success', data);
+  }
+}
+
+export function* watchUnsplach() {
+  yield all([takeLatest(actions.getCategoryTree, getCategoryTree)]);
+}

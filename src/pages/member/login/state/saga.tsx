@@ -15,6 +15,7 @@ function* fetchLogin({ payload }: payloadType) {
 
   if (status === 200 && data) {
     yield put(actions.setUserState({ userToken: data.data.AccessToken, certifyYn: true }));
+    localStorage.setItem('token', data.data.AccessToken);
   }
 }
 
