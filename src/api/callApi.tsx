@@ -24,7 +24,10 @@ export default function callApi({
 }: // responseType,
 callApiPramsType): Promise<AxiosResponse> {
   const api_url = BASE_URL + '/api' + url;
-  const headers = { 'Content-Type': 'application/json' };
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  };
   console.log('토큰 유효성 검증', new Date());
   return axios({
     method,

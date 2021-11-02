@@ -39,10 +39,12 @@ body,
   height: 100%;
   padding-right: 10px;
   padding-left: 10px;
-  background: #7dbcea;
 }
 
 .feed-content {
   width: 100%;
   background: #108ee9;
+}
+.ant-layout-sider {
+  background: white;
 }

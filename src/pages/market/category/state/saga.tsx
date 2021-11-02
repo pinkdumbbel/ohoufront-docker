@@ -6,19 +6,18 @@ interface payloadType {
   payload: unknown;
 }
 
-function* fetchLogin({ payload }: payloadType) {
+function* getCategoryTree({ payload }: payloadType) {
   const { status, data } = yield call(callApi, {
-    url: '/auth/login',
-    method: 'post',
+    url: '/category',
+    method: 'get',
     data: payload,
   });
 
   if (status === 200 && data) {
-    yield put(actions.setUserState({ userToken: data.data.AccessToken, certifyYn: true }));
-    localStorage.setItem('token', data.data.AccessToken);
+    console.log('success', data);
   }
 }
 
 export function* watchUnsplach() {
-  yield all([takeLatest(actions.fetchLogin, fetchLogin)]);
+  yield all([takeLatest(actions.getCategoryTree, getCategoryTree)]);
 }
