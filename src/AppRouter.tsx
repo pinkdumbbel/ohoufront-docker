@@ -9,7 +9,6 @@ const AppRouter: React.FC = () => {
     <>
       <Router>
         <Route path="/" component={SessionRouter} />
-        {/* <Route path="/productions" component={ProductRouter} /> */}
       </Router>
     </>
   );

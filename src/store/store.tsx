@@ -1,9 +1,9 @@
 import { sagaMiddleware, rootSaga } from './rootSaga';
 import { rootReducer } from './rootReducer';
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, EnhancedStore } from '@reduxjs/toolkit';
 
 // middlewares
-import logger from 'redux-logger';
+//import logger from 'redux-logger';
 
 const devMode = process.env.NODE_ENV === 'development';
 
@@ -21,5 +21,7 @@ const createStore = () => {
 
   return store;
 };
+
+export type RootState = ReturnType<typeof createStore>;
 
 export default createStore;
