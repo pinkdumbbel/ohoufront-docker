@@ -8,14 +8,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
 import { RouteComponentProps } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import { AppDispatch, RootState } from '@/store/store';
+import { LoginFormData } from '@/types/login';
+import { LocationState } from '@/types/common';
 
 const LoginPage: React.FC<RouteComponentProps> = (props) => {
-  const [form] = Form.useForm();
-  const dispatch = useDispatch();
-  const location = useLocation();
+  const [form] = Form.useForm<LoginFormData>();
+  const dispatch = useDispatch<AppDispatch>();
+  const location = useLocation<LocationState>();
 
-  const { from }: any = location.state || { from: { pathname: '/' } };
-  const certifyYn = useSelector((state) => getState(state).certifyYn);
+  const { from } = location.state || { from: { pathname: '/' } };
+  const certifyYn = useSelector((state: RootState) => getState(state).certifyYn);
 
   useEffect(() => {
     console.log('certifyYn', certifyYn);

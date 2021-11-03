@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import AppRouter from './AppRouter';
 import reportWebVitals from './reportWebVitals';
-import createStore from './store/store';
 import { Provider } from 'react-redux';
 import 'antd/dist/antd.css';
-
-const store = createStore();
+import store from './store/store';
 
 ReactDOM.render(
   <React.StrictMode>

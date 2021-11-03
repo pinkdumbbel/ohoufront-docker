@@ -22,6 +22,9 @@ const createStore = () => {
   return store;
 };
 
-export type RootState = ReturnType<typeof createStore>;
+const store = createStore();
 
-export default createStore;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+export default store;

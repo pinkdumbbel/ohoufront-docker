@@ -2,12 +2,24 @@ import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { actions } from '.';
 import callApi from '@/api/callApi';
 
-interface payloadType {
-  payload: unknown;
+interface LoginPayload {
+  payload: {
+    email: string;
+    password: string;
+  };
 }
 
-function* fetchLogin({ payload }: payloadType) {
-  const { status, data } = yield call(callApi, {
+interface LoginResponseData {
+  status: number;
+  data: {
+    data: {
+      AccessToken: string;
+    };
+  };
+}
+
+function* fetchLogin({ payload }: LoginPayload) {
+  const { status, data }: LoginResponseData = yield call(callApi, {
     url: '/auth/login',
     method: 'post',
     data: payload,

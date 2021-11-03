@@ -7,11 +7,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { actions, getState } from '../state';
 import { RouteComponentProps } from 'react-router';
+import { AppDispatch, RootState } from '@/store/store';
+import { SignUpFormData } from '@/types/signUp';
 
 const SignUpPage: React.FC<RouteComponentProps> = (props) => {
-  const [form] = Form.useForm();
-  const dispatch = useDispatch();
-  const isSignedUp = useSelector((state) => getState(state).isSignedUp);
+  const [form] = Form.useForm<SignUpFormData>();
+  const dispatch = useDispatch<AppDispatch>();
+  const isSignedUp = useSelector((state: RootState) => getState(state).isSignedUp);
 
   useEffect(() => {
     console.log('isSignedUp', isSignedUp);
