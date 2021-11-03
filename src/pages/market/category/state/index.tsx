@@ -4,7 +4,7 @@ const ROOT_SLICE_NAME = 'market';
 const SLICE_NAME = 'category';
 
 const initialState = {
-  categoryTree: '',
+  categoryTree: [],
 };
 
 const sagaAction = {

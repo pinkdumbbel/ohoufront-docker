@@ -1,21 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AppLayout from '@/common/applayout/AppLayout';
-import { Layout } from 'antd';
 import './style.css';
-import { useDispatch } from 'react-redux';
-import { actions } from '../state';
-// import { useMounted } from '@/hooks';
-import { Tree } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+import { actions, getState } from '../state';
+import { useMounted } from '@/hooks';
+import { Tree, Breadcrumb, Layout, Carousel, Card } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 
 const CategoryPage: React.FC = () => {
   const { Sider, Content } = Layout;
-  const dispatch = useDispatch();
+  const { Meta } = Card;
 
-  useEffect(() => {
-    console.log('getCategory Tree');
+  const dispatch = useDispatch();
+  const [breadCrumb, setBreadCrumb] = useState([]);
+  const categoryTree = useSelector((state) => getState(state).categoryTree);
+
+  useMounted(() => {
     dispatch(actions.getCategoryTree());
-  }, []);
+  });
+
+  const onSelectTree = (selectedKeys: React.Key[], info: any) => {
+    console.log('selected', selectedKeys, info);
+  };
+
+  const contentStyle = {
+    height: '160px',
+    color: '#fff',
+    lineHeight: '160px',
+    background: '#364d79',
+  };
 
   return (
     <AppLayout>
@@ -23,64 +36,76 @@ const CategoryPage: React.FC = () => {
         <div className="feed-wrap">
           <div className="feed-row">
             <Sider width={300} className="feed-sidebar">
-              <Tree
-                showLine
-                switcherIcon={<DownOutlined />}
-                defaultExpandedKeys={['0-0-0']}
-                // onSelect={this.onSelect}
-                treeData={[
-                  {
-                    title: 'parent 1',
-                    key: '0-0',
-                    children: [
-                      {
-                        title: 'parent 1-0',
-                        key: '0-0-0',
-                        children: [
-                          {
-                            title: 'leaf',
-                            key: '0-0-0-0',
-                          },
-                          {
-                            title: 'leaf',
-                            key: '0-0-0-1',
-                          },
-                          {
-                            title: 'leaf',
-                            key: '0-0-0-2',
-                          },
-                        ],
-                      },
-                      {
-                        title: 'parent 1-1',
-                        key: '0-0-1',
-                        children: [
-                          {
-                            title: 'leaf',
-                            key: '0-0-1-0',
-                          },
-                        ],
-                      },
-                      {
-                        title: 'parent 1-2',
-                        key: '0-0-2',
-                        children: [
-                          {
-                            title: 'leaf',
-                            key: '0-0-2-0',
-                          },
-                          {
-                            title: 'leaf',
-                            key: '0-0-2-1',
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                ]}
-              />
+              <Tree showLine={false} switcherIcon={<DownOutlined />} treeData={categoryTree} onSelect={onSelectTree} />
             </Sider>
-            <Content className="feed-content"></Content>
+            <Content className="feed-content">
+              <Breadcrumb separator=">">
+                <Breadcrumb.Item>
+                  <a href="">가구</a>
+                </Breadcrumb.Item>
+                <Breadcrumb.Item>
+                  <a href="">소파/거실</a>
+                </Breadcrumb.Item>
+              </Breadcrumb>
+              <Carousel>
+                <div>
+                  <h3 style={contentStyle}>1</h3>
+                </div>
+                <div>
+                  <h3 style={contentStyle}>2</h3>
+                </div>
+                <div>
+                  <h3 style={contentStyle}>3</h3>
+                </div>
+                <div>
+                  <h3 style={contentStyle}>4</h3>
+                </div>
+              </Carousel>
+              <div className="category-content">
+                <Card
+                  hoverable
+                  style={{ width: 265 }}
+                  cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                >
+                  <Meta title="Europe Street beat" description="www.instagram.com" />
+                </Card>
+                <Card
+                  hoverable
+                  style={{ width: 265 }}
+                  cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                >
+                  <Meta title="Europe Street beat" description="www.instagram.com" />
+                </Card>
+                <Card
+                  hoverable
+                  style={{ width: 265 }}
+                  cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                >
+                  <Meta title="Europe Street beat" description="www.instagram.com" />
+                </Card>
+                <Card
+                  hoverable
+                  style={{ width: 265 }}
+                  cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                >
+                  <Meta title="Europe Street beat" description="www.instagram.com" />
+                </Card>
+                <Card
+                  hoverable
+                  style={{ width: 265 }}
+                  cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                >
+                  <Meta title="Europe Street beat" description="www.instagram.com" />
+                </Card>
+                <Card
+                  hoverable
+                  style={{ width: 265 }}
+                  cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                >
+                  <Meta title="Europe Street beat" description="www.instagram.com" />
+                </Card>
+              </div>
+            </Content>
           </div>
         </div>
       </div>

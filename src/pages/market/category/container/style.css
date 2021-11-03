@@ -15,9 +15,6 @@ body,
   flex-direction: column;
 }
 
-.feed-container {
-  height: 540px;
-}
 .feed-wrap {
   margin-right: auto;
   margin-left: auto;
@@ -29,7 +26,7 @@ body,
 }
 
 .feed-row {
-  height: 500px;
+  /* height: 500px; */
   display: flex;
   /* flex-wrap: wrap; */
   box-sizing: border-box;
@@ -42,9 +39,15 @@ body,
 }
 
 .feed-content {
-  width: 100%;
-  background: #108ee9;
+  /* width: 100%; */
+  width: 800px;
 }
 .ant-layout-sider {
   background: white;
+}
+
+.category-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }

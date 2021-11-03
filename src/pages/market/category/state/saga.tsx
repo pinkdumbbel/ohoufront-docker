@@ -14,7 +14,7 @@ function* getCategoryTree({ payload }: payloadType) {
   });
 
   if (status === 200 && data) {
-    console.log('success', data);
+    yield put(actions.setValue('categoryTree', data.data.category));
   }
 }
 
