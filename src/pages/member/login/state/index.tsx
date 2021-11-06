@@ -1,11 +1,11 @@
 import { RootState } from '@/store/store';
-import { LoginFormData, LoginPayload, LoginPayloadAction, LoginResponseData } from '@/types/login';
+import { LoginFormData, LoginState } from '@/types/login';
 import { createSlice, createAction, PayloadAction } from '@reduxjs/toolkit';
 
 const ROOT_SLICE_NAME = 'member';
 const SLICE_NAME = 'login';
 
-const initialState: LoginResponseData = {
+const initialState: LoginState = {
   userToken: 'test',
   certifyYn: false,
 };
@@ -16,15 +16,7 @@ const sagaAction = {
 
 const reducers = {
   initState: () => initialState,
-  setValue: {
-    reducer: (state: any, action: PayloadAction<LoginPayloadAction>) => {
-      state[action.payload.key] = action.payload.value;
-    },
-    prepare: (key: 'userToken' | 'certifyYn', value: string | boolean) => {
-      return { payload: { key, value } };
-    },
-  },
-  setUserState: (state: LoginResponseData, { payload: { userToken, certifyYn } }: LoginPayload) => {
+  setUserState: (state: LoginState, { payload: { userToken, certifyYn } }: PayloadAction<LoginState>) => {
     state.userToken = userToken;
     state.certifyYn = certifyYn;
   },
@@ -36,7 +28,7 @@ const slice = createSlice({
   reducers,
 });
 
-export const getState = (state: RootState): LoginResponseData => state[ROOT_SLICE_NAME][SLICE_NAME];
+export const getState = (state: RootState): LoginState => state[ROOT_SLICE_NAME][SLICE_NAME];
 export const actions = {
   ...slice.actions,
   ...sagaAction,

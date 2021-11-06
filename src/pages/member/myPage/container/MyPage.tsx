@@ -1,53 +1,60 @@
-import React, { useState } from 'react';
-import Header from '@/common/header/Header';
-import Footer from '@/common/footer/Footer';
+import React from 'react';
 import './style.css';
 import { Radio } from 'antd';
-import { Button } from 'antd';
-import Popout from '@/common/popout/Popout';
+import { Form, Button, Input, Select } from 'antd';
+import AppLayout from '@/common/applayout/AppLayout';
+import { MyPageFormData } from '@/types/myPage';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/store/store';
+import { actions } from '../state';
 
 /* import Input from '@/common/Input'; */
 
 const MyPage: React.FC = () => {
-  const editUser = 'edit-user-info';
-  const editUserFromItem = 'edit-user-info-form-item';
+  const [form] = Form.useForm<MyPageFormData>();
+  const dispatch = useDispatch<AppDispatch>();
   const emails = ['naver.com', 'daum.net', 'gmail.com', '직접입력'];
 
-  const [isMounted, setIsMounted] = useState(false);
-  const onMounted = () => setIsMounted(!isMounted);
+  const myPageSubmit = () => {
+    const formData = form.getFieldsValue();
+    console.log('MyPageSubmit', formData);
+    dispatch(actions.editProfileSubmit(formData));
+  };
   return (
-    <>
-      <Header onMounted={onMounted} />
-
-      <div className={`${editUser}-wrap`}>
-        <div className={`${editUser}-header`}>
-          <div className={`${editUser}-header-title`}>회원정보수정</div>
+    <AppLayout>
+      <div className="edit-user-info-wrap">
+        <div className="edit-user-info-header">
+          <div className="edit-user-info-header-title">회원정보수정</div>
         </div>
 
-        <form>
-          <div className={`${editUserFromItem}`}>
-            <div className={`${editUserFromItem}-title`}>
+        <Form form={form}>
+          <div className="edit-user-info-form-item">
+            <div className="edit-user-info-form-item-title">
               이메일
-              <div className={`${editUserFromItem}-title-require`}> * 필수항목</div>
+              <div className="edit-user-info-form-item-title-require"> * 필수항목</div>
             </div>
 
-            <div className={`${editUserFromItem}-group expert-form-group`}>
+            <div className="edit-user-info-form-item-group expert-form-group">
               <div className="expert-form-group-content">
                 <div className="expert-form-group-input">
                   <div className="edit-user-info-form-item-field">
-                    <div className="input-group email-input">
+                    <div className="input-group email-input-wrap">
                       <span className="email-input-local">
-                        <input className="form-control" placeholder="이메일" />
+                        <Form.Item name="email" noStyle>
+                          <Input size="large" placeholder="이메일" />
+                        </Form.Item>
                       </span>
                       <span className="email-input-separator">@</span>
                       <span className="email-input-domain">
-                        <select className="form-control">
-                          {emails.map((email) => (
-                            <option key={email} value={email}>
-                              {email}
-                            </option>
-                          ))}
-                        </select>
+                        <Form.Item name="email_domain">
+                          <Select className="form-control-email-domain" size="large">
+                            {emails.map((email) => (
+                              <Select.Option key={email} value={email}>
+                                {email}
+                              </Select.Option>
+                            ))}
+                          </Select>
+                        </Form.Item>
                       </span>
                     </div>
                   </div>
@@ -56,24 +63,43 @@ const MyPage: React.FC = () => {
             </div>
           </div>
 
-          <div className={`${editUserFromItem}`}>
-            <div className={`${editUserFromItem}-title`}>홈페이지</div>
-
-            <div className={`${editUserFromItem}-group expert-form-group`}>
+          <div className="edit-user-info-form-item">
+            <div className="edit-user-info-form-item-title">
+              별명
+              <div className="edit-user-info-form-item-title-require"> * 필수항목</div>
+            </div>
+            <div className="edit-user-info-form-item-group expert-form-group">
               <div className="expert-form-group-content">
                 <div className="expert-form-group-input">
                   <div className="edit-user-info-form-item-field">
-                    <input className="form-control" placeholder="https://ohou.se" />
+                    <Form.Item name="nickname" noStyle>
+                      <Input size="large" placeholder="별명" />
+                    </Form.Item>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className={`${editUserFromItem}`}>
-            <div className={`${editUserFromItem}-title`}>성별</div>
+          <div className="edit-user-info-form-item">
+            <div className="edit-user-info-form-item-title">홈페이지</div>
 
-            <div className={`${editUserFromItem}-group expert-form-group expert-form-group-gender`}>
+            <div className="edit-user-info-form-item-group expert-form-group">
+              <div className="expert-form-group-content">
+                <div className="expert-form-group-input">
+                  <div className="edit-user-info-form-item-field">
+                    <Form.Item name="homepage" noStyle>
+                      <Input size="large" placeholder="https://ohou.se" />
+                    </Form.Item>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="edit-user-info-form-item">
+            <div className="edit-user-info-form-item-title">성별</div>
+            <div className="edit-user-info-form-item-group expert-form-group expert-form-group-gender">
               <div className="expert-form-group-content">
                 <Radio.Group>
                   <Radio value="m">남성</Radio>
@@ -83,10 +109,10 @@ const MyPage: React.FC = () => {
             </div>
           </div>
 
-          <div className={`${editUserFromItem}`}>
-            <div className={`${editUserFromItem}-title`}>프로필 이미지</div>
+          <div className="edit-user-info-form-item">
+            <div className="edit-user-info-form-item-title">프로필 이미지</div>
 
-            <div className={`expert-form-group ${editUserFromItem}-group`}>
+            <div className="edit-user-info-form-item-group expert-form-group">
               <div className="edit-user-info-form-item-field edit-user-info-form-item-field-profile">
                 <div className="image-single-input-wrap">
                   <ul className="image-single-input">
@@ -104,15 +130,12 @@ const MyPage: React.FC = () => {
               </div>
             </div>
           </div>
-          <Button type="primary" className={`${editUser}-submit-btn`}>
+          <Button type="primary" className="edit-user-info-submit-btn" onClick={myPageSubmit}>
             회원 정보 수정
           </Button>
-        </form>
+        </Form>
       </div>
-
-      <Footer />
-      <Popout isMounted={isMounted} />
-    </>
+    </AppLayout>
   );
 };
 

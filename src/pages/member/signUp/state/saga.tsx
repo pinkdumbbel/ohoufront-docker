@@ -1,18 +1,16 @@
-import { all, call, put, select, takeLatest } from 'redux-saga/effects';
-import { actions, getState } from '.';
+import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { actions } from '.';
 import callApi from '@/api/callApi';
+import { PayloadAction } from '@reduxjs/toolkit';
+import { SignUpFormData, SignUpResponseData } from '@/types/signUp';
 
-interface payloadType {
-  payload: unknown;
-}
-
-function* signUpSubmit({ payload }: payloadType) {
-  const { status, data } = yield call(callApi, {
+function* signUpSubmit({ payload }: PayloadAction<SignUpFormData>) {
+  const { status }: SignUpResponseData = yield call(callApi, {
     url: '/join',
     method: 'post',
     data: payload,
   });
-  if (status === 201 && data) {
+  if (status === 201) {
     yield put(actions.setValue('isSignedUp', true));
   }
 }

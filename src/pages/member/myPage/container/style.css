@@ -29,6 +29,7 @@ div {
 
 .edit-user-info-form-item {
   display: flex;
+  height: auto;
 }
 
 .edit-user-info-form-item-title {
@@ -59,7 +60,7 @@ div {
 .expert-form-group-gender {
   padding: 32px 0;
 }
-.email-input {
+.email-input-wrap {
   display: flex;
 }
 
@@ -71,6 +72,10 @@ div {
 .email-input-local {
   position: relative;
   flex: 1 1 0px;
+}
+
+.ant-form-item {
+  margin-bottom: 0px;
 }
 
 .form-control {
@@ -87,6 +92,13 @@ div {
   border: solid 1px #dbdbdb;
   background-color: #ffffff;
   color: #424242;
+}
+
+.ant-select-selector {
+  height: 40px;
+}
+.email-input {
+  max-width: 100%;
 }
 
 .email-input-separator {

@@ -1,3 +1,7 @@
+export interface SignUpResponseData {
+  status: number;
+}
+
 export interface SignUpFormData {
   email: string;
   password: string;
@@ -5,7 +9,7 @@ export interface SignUpFormData {
   nickName: string;
 }
 
-export interface SignUpResponseData {
+export interface SignUpState {
   isSignedUp: boolean;
 }
 

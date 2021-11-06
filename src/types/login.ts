@@ -1,15 +1,20 @@
+export interface LoginResponseData {
+  status: number;
+  data: {
+    data: {
+      AccessToken: string;
+    };
+  };
+}
+
 export interface LoginFormData {
   email: string;
   password: string;
 }
 
-export interface LoginResponseData {
+export interface LoginState {
   userToken: string;
   certifyYn: boolean;
-}
-
-export interface LoginPayload {
-  payload: LoginResponseData;
 }
 
 export interface LoginPayloadAction {
