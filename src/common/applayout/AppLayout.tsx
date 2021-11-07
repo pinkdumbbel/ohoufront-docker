@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '@/common/header/Header';
 import Footer from '@/common/footer/Footer';
-import Popout from '@/common/popout/Popout';
+import UserMenu from '../userMenu/UserMenu';
 
 const AppLayout: React.FC = ({ children }) => {
   const [isMounted, setIsMounted] = useState(false);
@@ -13,7 +13,7 @@ const AppLayout: React.FC = ({ children }) => {
       <Header onMounted={onMounted} />
       {children}
       <Footer />
-      <Popout isMounted={isMounted} />
+      <UserMenu isMounted={isMounted} />
     </>
   );
 };

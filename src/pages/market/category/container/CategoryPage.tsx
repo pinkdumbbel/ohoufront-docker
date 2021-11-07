@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import AppLayout from '@/common/applayout/AppLayout';
+import AppLayout from '@/common/appLayout/AppLayout';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions, getState } from '../state';

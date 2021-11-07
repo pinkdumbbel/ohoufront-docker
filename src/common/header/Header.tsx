@@ -5,45 +5,44 @@ import Cart from '@/common/svg/Cart';
 import SearchIcon from '@/common/svg/SearchIcon';
 import Input from '@/common/input/Input';
 import './style.css';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   onMounted: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ onMounted }) => {
-  const nav = 'header-navigation';
-
   return (
     <header>
-      <div className={nav}>
-        <div className={`${nav}-content`}>
-          <div className={`${nav}-left`}>
-            <a className={`${nav}-logo`} aria-label="오늘의집" href="/">
+      <div className="header-navigation">
+        <div className="header-navigation-content">
+          <div className="header-navigation-left">
+            <Link to="/main">
               <Logo />
-            </a>
+            </Link>
           </div>
 
-          <div className={`${nav}-right`}>
-            <div className={`${nav}-bar-search`}>
-              <div className={`${nav}-search`}>
-                <div className={`${nav}-search-header`}>
-                  <div className={`${nav}-search-box`}>
-                    <div className={`${nav}-search-input`}>
+          <div className="header-navigation-right">
+            <div className="header-navigation-bar-search">
+              <div className="header-navigation-search">
+                <div className="header-navigation-search-header">
+                  <div className="header-navigation-search-box">
+                    <div className="header-navigation-search-input">
                       <Input placeholder="스토어 검색" />
-                      <SearchIcon className={`${nav}-search-input-icon`} />
+                      <SearchIcon className="header-navigation-search-input-icon" />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <a href="{() => false}" className={`${nav}-icon`}>
+            <a href="{() => false}" className="header-navigation-icon">
               <Cart />
             </a>
 
-            <div className={`${nav}-user-drop-down`}>
-              <button className={`${nav}-user-button`} type="button" onClick={onMounted}>
-                <div className={`${nav}-user-button-img`}>
+            <div className="header-navigation-drop-down">
+              <button className="header-navigation-user-button" type="button" onClick={onMounted}>
+                <div className="header-navigation-user-button-img">
                   <img
                     className="image"
                     src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=72&h=72&c=c"

@@ -22,6 +22,7 @@ const SignUpPage: React.FC<RouteComponentProps> = (props) => {
       console.log('newPath', newPath);
       props.history.push(newPath);
     }
+    //eslint-disable-next-line
   }, [isSignedUp]);
 
   const signUpSubmit = () => {

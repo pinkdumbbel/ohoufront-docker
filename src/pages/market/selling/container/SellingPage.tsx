@@ -1,5 +1,5 @@
 import React from 'react';
-import AppLayout from '@/common/applayout/AppLayout';
+import AppLayout from '@/common/appLayout/AppLayout';
 import './style.css';
 import Entry from '@/common/svg/Entry';
 import { Row, Col, Carousel } from 'antd';

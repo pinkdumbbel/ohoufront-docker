@@ -1,4 +1,4 @@
-import axios, { AxiosResponse, Method, ResponseType } from 'axios';
+import axios, { AxiosRequestHeaders, AxiosResponse, Method } from 'axios';
 
 // // const BASE_URL = process.env.REACT_APP_BASE_URL;
 const BASE_URL = 'http://ec2-54-91-208-116.compute-1.amazonaws.com:8080';
@@ -8,8 +8,12 @@ interface callApiPramsType {
   method: Method;
   params?: unknown;
   data: unknown;
-  // responseType?: string;
 }
+
+/* const headers = {
+  'Content-Type': 'application/json',
+  //Authorization: `Bearer ${localStorage.getItem('token')}`,
+}; */
 
 /**
  * Returns a Axios Request Promise
@@ -24,10 +28,11 @@ export default function callApi({
 }: // responseType,
 callApiPramsType): Promise<AxiosResponse> {
   const api_url = BASE_URL + '/api' + url;
-  const headers = {
+  const headers: AxiosRequestHeaders = {
     'Content-Type': 'application/json',
     //Authorization: `Bearer ${localStorage.getItem('token')}`,
   };
+
   console.log('토큰 유효성 검증', new Date());
   return axios({
     method,

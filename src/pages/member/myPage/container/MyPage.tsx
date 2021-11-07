@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import { Radio } from 'antd';
 import { Form, Button, Input, Select } from 'antd';
-import AppLayout from '@/common/applayout/AppLayout';
+import AppLayout from '@/common/appLayout/AppLayout';
 import { MyPageFormData } from '@/types/myPage';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/store/store';

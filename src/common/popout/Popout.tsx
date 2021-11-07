@@ -3,6 +3,7 @@ import './style.css';
 
 interface PopOutProps {
   isMounted: boolean;
+  style?: React.CSSProperties;
 }
 
 function useDelayUnmount(isMounted: boolean, delay: number): boolean {
@@ -19,15 +20,14 @@ function useDelayUnmount(isMounted: boolean, delay: number): boolean {
 
   return showUserMenu;
 }
-const Popout: React.FC<PopOutProps> = ({ isMounted }) => {
+const Popout: React.FC<PopOutProps> = ({ children, isMounted, style }) => {
   const showUserMenu = useDelayUnmount(isMounted, 10);
   const mountedStyle: React.CSSProperties = {
     animation: 'inAnimation 100ms ease-in',
     display: 'block',
     position: 'absolute',
     zIndex: 1000,
-    top: '70px',
-    right: '187.5px',
+    ...style,
   };
   const unmountedStyle: React.CSSProperties = {
     animation: 'outAnimation 100ms ease-out',
@@ -38,17 +38,7 @@ const Popout: React.FC<PopOutProps> = ({ isMounted }) => {
     <>
       {showUserMenu && (
         <div className="popout" style={isMounted ? mountedStyle : unmountedStyle}>
-          <div className="animated-popout header-navigation-bar-user-section-content">
-            <ul className="header-navigation-bar-user-menu">
-              {['마이페이지', '비밀번호설정', '로그아웃'].map((menu, i) => (
-                <li key={i}>
-                  <a className="header-navigation-bar-user-menu-item" href="#!">
-                    {menu}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="animated-popout header-navigation-bar-user-section-content">{children}</div>
         </div>
       )}
     </>

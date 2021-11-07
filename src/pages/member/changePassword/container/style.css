@@ -1,0 +1,26 @@
+.update-passowrd-wrap {
+  width: 480px;
+  padding: 40px;
+  color: #292929;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
+  margin: 50px auto;
+}
+
+.update-password-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.update-password-section {
+  line-height: 1.5;
+}
+
+.update-password-section-title {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.expert-form-group {
+  padding: 20px 0;
+}
