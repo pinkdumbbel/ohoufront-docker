@@ -1,8 +1,12 @@
 ol {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
+button:focus {
+  outline: 0;
+}
 .production-selling {
   position: relative;
   min-height: 1px;
@@ -18,61 +22,312 @@ ol {
 }
 
 .production-selling-overview-category {
-  display: block;
-  margin: 20px 0 0;
-  padding: 0;
+  margin: 20px 0px 0px;
+  padding: 0px;
   border: none;
+  display: block;
 }
 
-.commerce-category-breadcrumb .commerce-category-breadcrumb-entry {
-  display: inline-block;
-  margin-right: 2px;
-  color: #757575;
+.commerce-category-breadcrumb-entry {
+  margin-right: 5px;
   font-size: 15px;
+  display: inline-block;
+  color: rgb(117, 117, 117);
   line-height: 1.2;
-}
-
-.commerce-category-breadcrumb-entry > .icon {
-  margin-left: 5px;
-  width: 10px;
-  height: 10px;
-  color: #bdbdbd;
-  vertical-align: -1px;
 }
 
 .production-selling-overview-container {
   margin-top: 40px;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  margin-right: -10px;
-  margin-left: -10px;
+.production-selling-overview-cover-image-wrap {
+  max-width: 60%;
+  /* height: 500px; */
 }
 
-.production-selling-overview-cover-image-wrap {
-  padding-right: 10px;
-  padding-left: 10px;
+.production-selling-overview-content {
+  max-width: 40%;
+  height: 500px;
 }
 
 .production-selling-cover-image-container {
+  display: flex;
   position: relative;
-}
-
-.carousel {
-  position: relative;
+  height: 100%;
 }
 
 .production-selling-overview-cover-image {
   margin: 0 30px 0 0;
 }
 
-.carousel-list-wrap {
-  overflow: hidden;
+.production-selling-cover-image {
+  display: flex;
+  align-items: flex-start;
 }
 
 .production-selling-cover-image-carousel-wrap {
+  max-width: 83%;
   border-radius: 10px;
+  flex: 1 0 0px;
+  overflow: hidden;
+}
+
+.production-selling-cover-image-list {
+  order: -1;
+  margin: 0 10px 0 0;
+  display: block;
+}
+
+.production-selling-cover-image-list-item {
+  display: block;
+  margin: 0 0 8px;
+}
+
+.production-selling-cover-image-list-btn {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 56px;
+  height: 56px;
+  border: none;
+  background-color: #ededed;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.production-selling-cover-image-entry {
+  position: relative;
+  padding-bottom: 100%;
+  background-color: #ededed;
+}
+
+.carousel-list-entry {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.slick-dots-bottom li button {
+  display: none;
+}
+
+.production-selling-cover-image-entry-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.production-selling-overview-content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.production-selling-header {
+  position: relative;
+}
+
+.production-selling-header-title-name-wrap {
+  position: relative;
+}
+
+.production-selling-header-title-name {
+  font-size: 22px;
+  line-height: 33px;
+  min-height: 43px;
+  /* margin: 0 92px 0 0; */
+  display: block;
+  font-weight: 400;
+  color: #000;
+}
+
+.production-selling-header-content {
+  position: relative;
+  min-height: 46px;
+}
+
+.production-selling-header-review-wrap {
+  margin-top: 12px;
+}
+
+.anticon-star > svg {
+  width: 16px;
+  height: 16px;
+}
+
+.production-selling-header-review-text {
+  margin-left: 8px;
+  font-weight: 700;
+  color: #35c5f0;
+  font-size: 13px;
+  vertical-align: 2px;
+}
+
+.production-selling-header-price {
+  margin: 8px 0 0;
+}
+
+.production-selling-header-price-price-wrap {
+  display: inline-block;
+}
+
+.production-selling-header-price-price {
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+  display: block;
+  color: #000;
+}
+
+.production-selling-header-price-price > .number {
+  font-size: 30px;
+  font-weight: 900;
+  margin-right: 4px;
+  font-family: Tahoma, sans-serif;
+}
+
+.production-selling-header-price-price > .won {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.production-selling-header-info-wrap {
+  margin-top: 20px;
+  padding: 20px 0;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+}
+
+.production-selling-header-delivery {
+  display: flex;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.production-selling-header-delivery-title-wrap {
+  flex-basis: 42px;
+}
+
+.production-selling-header-delivery-title-wrap span {
+  font-size: 14px;
+  line-height: 21px;
+  color: #828c94;
+}
+
+.production-selling-header-delivery-content-wrap {
+  flex-basis: auto;
+  flex-grow: 1;
+  width: 42px;
+}
+
+.production-selling-header-delivery-type {
+  display: block;
+  margin-bottom: 4px;
+  color: #292929;
+}
+
+.production-selling-overview-option-form {
+  display: block;
+  margin-top: 10px;
+}
+
+.selling-option-form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.production-selling-option-form-form {
+  flex: 1 1 auto;
+}
+
+.selling-option-item {
+  position: relative;
+  margin: 0 0 8px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+
+.selling-option-form-content-list {
+  margin-top: 20px;
+}
+.selling-option-item-production {
+  margin: 0 0 10px;
+  padding: 0 22px 0 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #424242;
+  max-height: 40px;
+  overflow: hidden;
+  display: -webkit-box;
+}
+
+.selling-option-item-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.selling-option-item-quantity {
+  width: 80px;
+  text-align: center;
+}
+
+.selling-option-item-price {
+  flex: 0 0 auto;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #424242;
+}
+
+.selling-option-form-content-price {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.selling-option-form-content-price-left,
+.selling-option-form-content-price-right {
+  flex: 0 0 auto;
+  font-weight: 700;
+  color: #000;
+}
+
+.selling-option-form-content-price-left {
+  font-size: 13px;
+}
+
+.selling-option-form-content-price-right {
+  font-size: 20px;
+  text-align: right;
+}
+
+.selling-option-form-content-price-number {
+  font-family: Tahoma, sans;
+}
+
+.production-selling-option-form-footer {
+  display: flex;
+  flex: 0 0 auto;
+  margin: 20px -3px 0;
+}
+
+.production-selling-option-form-footer > button {
+  flex: 1 0 0px;
+  margin: 0 3px;
+  font-size: 17px;
+  line-height: 26px;
+  height: 55px;
+}
+
+.production-selling-option-form-footer > .button-default {
+  background-color: #fff;
+  border-color: #35c5f0;
+  color: #35c5f0;
 }

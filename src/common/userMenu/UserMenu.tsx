@@ -13,7 +13,11 @@ const UserMenu: React.FC<UserMenuProps> = ({ isMounted }) => {
     right: '187.5px',
   };
 
-  const userMenus = [['마이페이지', 'myPage'], ['비밀번호설정', 'changePassword'], '로그아웃'];
+  const userMenus = [
+    ['마이페이지', 'myPage'],
+    ['비밀번호설정', 'changePassword'],
+    ['로그아웃', 'logout'],
+  ];
 
   return (
     <Popout isMounted={isMounted} style={style}>
