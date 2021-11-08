@@ -18,6 +18,20 @@ function* getCategoryTree({ payload }: payloadType) {
   }
 }
 
+function* getStoreItmes({ payload }: payloadType) {
+  const { status, data } = yield call(callApi, {
+    url: '/store',
+    method: 'get',
+    data: payload,
+  });
+
+  if (status === 200 && data) {
+    console.log('getStoreItmes', data);
+    // yield put(actions.setValue('categoryTree', data.data.category));
+  }
+}
+
 export function* watchUnsplach() {
   yield all([takeLatest(actions.getCategoryTree, getCategoryTree)]);
+  yield all([takeLatest(actions.getStoreItmes, getStoreItmes)]);
 }

@@ -9,6 +9,7 @@ const initialState = {
 
 const sagaAction = {
   getCategoryTree: createAction(`${SLICE_NAME}/getCategoryTree`),
+  getStoreItmes: createAction(`${SLICE_NAME}/getStoreItmes`),
 };
 
 const reducers = {

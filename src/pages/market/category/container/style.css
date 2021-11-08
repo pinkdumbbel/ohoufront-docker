@@ -47,7 +47,17 @@ body,
 }
 
 .category-content {
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.bread-crumb {
+  margin-bottom: 20px;
+}
+
+.carosel-wrapper {
+  margin-bottom: 30px;
+  height: 260px;
 }

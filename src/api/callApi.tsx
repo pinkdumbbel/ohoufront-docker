@@ -30,7 +30,7 @@ callApiPramsType): Promise<AxiosResponse> {
   const api_url = BASE_URL + '/api' + url;
   const headers: AxiosRequestHeaders = {
     'Content-Type': 'application/json',
-    //Authorization: `Bearer ${localStorage.getItem('token')}`,
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
   };
 
   console.log('토큰 유효성 검증', new Date());
