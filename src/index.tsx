@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import AppRouter from './AppRouter';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import 'antd/dist/antd.css';
@@ -10,7 +10,7 @@ import store from './store/store';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <AppRouter />
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
