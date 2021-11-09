@@ -1,0 +1,43 @@
+.selling-option-item {
+  position: relative;
+  margin: 0 0 8px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+
+.selling-option-form-content-list {
+  margin-top: 20px;
+}
+
+.selling-option-item-production {
+  margin: 0 0 10px;
+  /* padding: 0 22px 0 0; */
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #424242;
+  max-height: 40px;
+  overflow: hidden;
+  display: -webkit-box;
+}
+
+.selling-option-item-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.selling-option-item-quantity {
+  width: 80px;
+  text-align: center;
+}
+
+.selling-option-item-price {
+  flex: 0 0 auto;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #424242;
+}

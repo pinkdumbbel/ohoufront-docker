@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Logo from '@/common/svg/Logo';
 import Caret from '@/common/svg/Caret';
 import Cart from '@/common/svg/Cart';
@@ -12,9 +12,33 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onMounted }) => {
+  const [style, setStyle] = useState<React.CSSProperties>({ position: 'relative' });
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setStyle({
+        position: 'relative',
+        left: '0px',
+        right: '0px',
+        top: '0px',
+      });
+    } else {
+      setStyle({
+        position: 'relative',
+      });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [style]);
+
   return (
     <header>
-      <div className="header-navigation">
+      <div className="header-navigation" style={style}>
         <div className="header-navigation-content">
           <div className="header-navigation-left">
             <Link to="/main">

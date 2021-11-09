@@ -26,6 +26,8 @@ button {
 }
 
 .header-navigation {
+  transition: top 1s;
+  z-index: 502;
   background-color: #fff;
   border-bottom: 1px solid #ededed;
 }
