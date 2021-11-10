@@ -1,5 +1,5 @@
 import { Layout } from 'antd';
-import React from 'react';
+import React, { useRef } from 'react';
 import './style.css';
 const Footer: React.FC = () => {
   const { Footer } = Layout;

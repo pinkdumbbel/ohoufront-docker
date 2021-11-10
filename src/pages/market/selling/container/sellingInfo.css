@@ -1,5 +1,6 @@
 .production-selling-navigation-wrap {
   margin: 30px 0px 20px 0px;
+  z-index: 100;
 }
 
 .production-selling-navigation {
@@ -41,7 +42,7 @@
 }
 
 .production-selling-detail-content {
-  width: 60%;
+  width: 70%;
   padding-right: 10px;
   padding-left: 10px;
 }
@@ -91,7 +92,7 @@
 }
 
 .production-selling-sidebar-content {
-  max-width: 300px;
+  width: 300px;
   padding: 0 0 20px;
   margin: 0 auto;
   box-sizing: border-box;

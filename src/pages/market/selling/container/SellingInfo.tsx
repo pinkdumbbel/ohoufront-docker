@@ -1,22 +1,53 @@
-import React, { useRef, useState } from 'react';
-import { Button, Col, Row, Tabs } from 'antd';
+import React, { RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import { Button, Col, Row, Tabs, Affix, Slider } from 'antd';
 import './sellingInfo.css';
 import SellingOption from '@/common/sellingOption/SellingOption';
+import usePosition from '@/hooks/usePosition';
+import { OptGroup } from 'rc-select';
 
-const SellingInfo: React.FC = () => {
+interface SellingInfoProps {
+  intersect?: number;
+}
+
+const SellingInfo: React.FC<SellingInfoProps> = () => {
+  const sidebarHeight = 539;
+  const [currentScrollY, setCurrentScrollY] = useState(0);
+
+  const [height, setHeight] = useState(sidebarHeight);
+  /*   const [container, setContainer] = useState<HTMLDivElement | null>(null); */
   const tabsTitle = ['상품정보', '리뷰', '문의', '배송/환불'];
-  const navRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef(null);
+  const intersect = usePosition(scrollRef);
+  const testRef = useRef<HTMLDivElement>(null);
+  const fixedRef = useRef<HTMLDivElement>(null);
+  const handleScroll = () => {
+    const diffScrollHeight = sidebarHeight - (window.scrollY - currentScrollY);
+    if (diffScrollHeight >= 325) {
+      setHeight(diffScrollHeight);
+    }
+  };
 
-  /* const [sidebarStyle, setSidebarStyle] = useState<React.CSSProperties>({
-    position: 'relative',
-    boxSizing: 'border-box',
-    height: '200px',
-  }); */
+  useEffect(() => {
+    if (intersect) {
+      if (currentScrollY === 0) setCurrentScrollY(window.scrollY);
+      window.addEventListener('scroll', handleScroll);
+    }
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [currentScrollY, intersect, window.scrollY, handleScroll]);
 
+  const testScroll = () => {
+    console.log(testRef.current?.getBoundingClientRect());
+    console.log(fixedRef.current?.getBoundingClientRect());
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', testScroll);
+  }, [window.scrollY]);
   return (
     <>
-      <div ref={navRef}></div>
-      <div className="sticky-container production-selling-navigation-wrap">
+      <div className="sticky-container production-selling-navigation-wrap" style={{ position: 'sticky', top: '80px' }}>
         <div className="sticky-child production-selling-navigation">
           <Tabs defaultActiveKey="1" className="production-selling-navigation-content">
             {tabsTitle.map((tab, i) => (
@@ -27,8 +58,8 @@ const SellingInfo: React.FC = () => {
       </div>
 
       <div className="production-selling-detail-wrap container">
-        <Row wrap>
-          <Col flex={3} className="production-selling-detail-content">
+        <Row>
+          <Col flex={0} className="production-selling-detail-content" ref={testRef}>
             <div className="production-selling-content">
               <div className="production-selling-description production-selling-description-notice production-selling-description-open">
                 <ul className="production-selling-description-delivery-notice">
@@ -48,32 +79,34 @@ const SellingInfo: React.FC = () => {
               </div>
             </div>
           </Col>
-          <Col flex={2}>
-            <div className="production-selling-sidebar-wrap" style={{}}>
-              <div className="production-selling-sidebar" /* style={sidebarStyle} */>
-                <section className="production-selling-sidebar-content">
-                  <div className="production-selling-option-form production-selling-sidebar-content-option-form">
-                    <section className="selling-option-form-content production-selling-option-form-form">
-                      <SellingOption />
-                    </section>
-                    <div className="selling-option-form-content-price">
-                      <span className="selling-option-form-content-price-left">주문금액</span>
-                      <span className="selling-option-form-content-price-right">
-                        <span className="selling-option-form-content-price-number">10,000</span>원
-                      </span>
-                    </div>
+          <Col flex={0}>
+            <div className="production-selling-sidebar-wrap">
+              <Affix offsetTop={133}>
+                <div className="production-selling-sidebar" style={{ height: `539px` }} ref={fixedRef}>
+                  <section className="production-selling-sidebar-content">
+                    <div className="production-selling-option-form production-selling-sidebar-content-option-form">
+                      <section className="selling-option-form-content production-selling-option-form-form">
+                        <SellingOption />
+                      </section>
+                      <div className="selling-option-form-content-price">
+                        <span className="selling-option-form-content-price-left">주문금액</span>
+                        <span className="selling-option-form-content-price-right">
+                          <span className="selling-option-form-content-price-number">10,000</span>원
+                        </span>
+                      </div>
 
-                    <div className="production-selling-option-form-footer">
-                      <Button size="large" className="button">
-                        장바구니
-                      </Button>
-                      <Button size="large" type="primary">
-                        바로구매
-                      </Button>
+                      <div className="production-selling-option-form-footer">
+                        <Button size="large" className="button">
+                          장바구니
+                        </Button>
+                        <Button size="large" type="primary">
+                          바로구매
+                        </Button>
+                      </div>
                     </div>
-                  </div>
-                </section>
-              </div>
+                  </section>
+                </div>
+              </Affix>
             </div>
           </Col>
         </Row>

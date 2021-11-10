@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Logo from '@/common/svg/Logo';
 import Caret from '@/common/svg/Caret';
 import Cart from '@/common/svg/Cart';
@@ -16,16 +16,15 @@ const Header: React.FC<HeaderProps> = ({ onMounted }) => {
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
-      setStyle({
-        position: 'relative',
-        left: '0px',
-        right: '0px',
-        top: '0px',
-      });
+      style.position === 'relative' &&
+        setStyle({
+          position: 'fixed',
+          left: '0px',
+          right: '0px',
+          top: '0px',
+        });
     } else {
-      setStyle({
-        position: 'relative',
-      });
+      setStyle({ position: 'relative' });
     }
   };
 
@@ -34,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ onMounted }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [style]);
+  }, [window.scrollY]);
 
   return (
     <header>
