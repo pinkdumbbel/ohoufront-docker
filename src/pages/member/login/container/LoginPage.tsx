@@ -20,17 +20,17 @@ const LoginPage: React.FC<RouteComponentProps> = (props) => {
   const { from } = location.state || { from: { pathname: '/' } };
   const certifyYn = useSelector((state: RootState) => getState(state).certifyYn);
 
-  useEffect(() => {
-    console.log('certifyYn', certifyYn);
-    if (certifyYn) {
-      let newPath = { pathname: '/main' };
-      if (from.pathname !== '/') {
-        newPath = from;
-      }
-      console.log('newPath', newPath);
-      props.history.push(newPath);
-    }
-  }, [certifyYn]);
+  // useEffect(() => {
+  //   console.log('certifyYn', certifyYn);
+  //   if (certifyYn) {
+  //     let newPath = { pathname: '/main' };
+  //     if (from.pathname !== '/') {
+  //       newPath = from;
+  //     }
+  //     console.log('newPath', newPath);
+  //     props.history.push(newPath);
+  //   }
+  // }, [certifyYn]);
 
   const loginSubmit = () => {
     const formData = form.getFieldsValue();
