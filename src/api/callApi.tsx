@@ -48,6 +48,33 @@ callApiPramsType): Promise<AxiosResponse> {
     .catch((error) => error);
 }
 
+export function callApiNoAuth({
+  url,
+  method = 'get',
+  params,
+  data,
+}: // responseType,
+callApiPramsType): Promise<AxiosResponse> {
+  const api_url = BASE_URL + '/api' + url;
+  const headers: AxiosRequestHeaders = {
+    'Content-Type': 'application/json',
+  };
+
+  console.log('토큰 유효성 검증', new Date());
+  return axios({
+    method,
+    url: api_url,
+    data,
+    params,
+    headers,
+  })
+    .then((response) => {
+      console.log('response:', response);
+      return response;
+    })
+    .catch((error) => error);
+}
+
 export const ResultCode = {
   Success: 0,
 };

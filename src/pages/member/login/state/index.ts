@@ -20,6 +20,10 @@ const reducers = {
     state.userToken = userToken;
     state.certifyYn = certifyYn;
   },
+  logout: (state: LoginState) => {
+    state.userToken = '';
+    state.certifyYn = false;
+  },
 };
 
 const slice = createSlice({

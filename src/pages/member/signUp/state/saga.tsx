@@ -1,11 +1,11 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { actions } from '.';
-import callApi from '@/api/callApi';
+import { callApiNoAuth } from '@/api/callApi';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { SignUpFormData, SignUpResponseData } from '@/types/signUp';
 
 function* signUpSubmit({ payload }: PayloadAction<SignUpFormData>) {
-  const { status }: SignUpResponseData = yield call(callApi, {
+  const { status }: SignUpResponseData = yield call(callApiNoAuth, {
     url: '/join',
     method: 'post',
     data: payload,

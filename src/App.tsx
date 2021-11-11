@@ -12,8 +12,8 @@ const App: React.FC = () => {
   const certifyYn = useSelector((state: RootState) => getState(state).certifyYn);
 
   useEffect(() => {
-    // init이 false라면 router를 숨길 것이다.
-    if (certifyYn) {
+    // console.log('certifyYn 변경됐습니다.', certifyYn);
+    if (localStorage.getItem('certifyYn')) {
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
