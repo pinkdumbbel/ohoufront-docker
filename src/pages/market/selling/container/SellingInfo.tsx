@@ -10,41 +10,8 @@ interface SellingInfoProps {
 }
 
 const SellingInfo: React.FC<SellingInfoProps> = () => {
-  const sidebarHeight = 539;
-  const [currentScrollY, setCurrentScrollY] = useState(0);
-
-  const [height, setHeight] = useState(sidebarHeight);
-  /*   const [container, setContainer] = useState<HTMLDivElement | null>(null); */
   const tabsTitle = ['상품정보', '리뷰', '문의', '배송/환불'];
-  const scrollRef = useRef(null);
-  const intersect = usePosition(scrollRef);
-  const testRef = useRef<HTMLDivElement>(null);
-  const fixedRef = useRef<HTMLDivElement>(null);
-  const handleScroll = () => {
-    const diffScrollHeight = sidebarHeight - (window.scrollY - currentScrollY);
-    if (diffScrollHeight >= 325) {
-      setHeight(diffScrollHeight);
-    }
-  };
 
-  useEffect(() => {
-    if (intersect) {
-      if (currentScrollY === 0) setCurrentScrollY(window.scrollY);
-      window.addEventListener('scroll', handleScroll);
-    }
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [currentScrollY, intersect, window.scrollY, handleScroll]);
-
-  const testScroll = () => {
-    console.log(testRef.current?.getBoundingClientRect());
-    console.log(fixedRef.current?.getBoundingClientRect());
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', testScroll);
-  }, [window.scrollY]);
   return (
     <>
       <div className="sticky-container production-selling-navigation-wrap" style={{ position: 'sticky', top: '80px' }}>
@@ -59,7 +26,7 @@ const SellingInfo: React.FC<SellingInfoProps> = () => {
 
       <div className="production-selling-detail-wrap container">
         <Row>
-          <Col flex={0} className="production-selling-detail-content" ref={testRef}>
+          <Col flex={0} className="production-selling-detail-content">
             <div className="production-selling-content">
               <div className="production-selling-description production-selling-description-notice production-selling-description-open">
                 <ul className="production-selling-description-delivery-notice">
@@ -82,7 +49,7 @@ const SellingInfo: React.FC<SellingInfoProps> = () => {
           <Col flex={0}>
             <div className="production-selling-sidebar-wrap">
               <Affix offsetTop={133}>
-                <div className="production-selling-sidebar" style={{ height: `539px` }} ref={fixedRef}>
+                <div className="production-selling-sidebar" style={{ height: `312px`, bottom: '652px' }}>
                   <section className="production-selling-sidebar-content">
                     <div className="production-selling-option-form production-selling-sidebar-content-option-form">
                       <section className="selling-option-form-content production-selling-option-form-form">
