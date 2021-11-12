@@ -15,26 +15,9 @@ import { LocationState } from '@/types/common';
 const LoginPage: React.FC<RouteComponentProps> = (props) => {
   const [form] = Form.useForm<LoginFormData>();
   const dispatch = useDispatch<AppDispatch>();
-  const location = useLocation<LocationState>();
-
-  const { from } = location.state || { from: { pathname: '/' } };
-  const certifyYn = useSelector((state: RootState) => getState(state).certifyYn);
-
-  // useEffect(() => {
-  //   console.log('certifyYn', certifyYn);
-  //   if (certifyYn) {
-  //     let newPath = { pathname: '/main' };
-  //     if (from.pathname !== '/') {
-  //       newPath = from;
-  //     }
-  //     console.log('newPath', newPath);
-  //     props.history.push(newPath);
-  //   }
-  // }, [certifyYn]);
 
   const loginSubmit = () => {
     const formData = form.getFieldsValue();
-    console.log('formData', formData);
     dispatch(actions.fetchLogin(formData));
   };
 
@@ -44,12 +27,25 @@ const LoginPage: React.FC<RouteComponentProps> = (props) => {
         <div className="login-wrapper">
           <OhousLogin />
           <div className="login-form">
-            <Form form={form} name="basic" size="large">
-              <Form.Item name="email">
+            <Form form={form} name="basic" size="large" onFinish={loginSubmit}>
+              <Form.Item
+                className="login-input"
+                name="email"
+                rules={[
+                  {
+                    type: 'email',
+                    message: '이메일 형식이 유효하지 않습니다.',
+                  },
+                  {
+                    required: true,
+                    message: '이메일을 입력해주세요.',
+                  },
+                ]}
+              >
                 <Input size="large" placeholder="이메일" style={{ width: 300 }} />
               </Form.Item>
 
-              <Form.Item name="password">
+              <Form.Item className="login-input" name="password">
                 <Input.Password placeholder="비밀번호" style={{ width: 300 }} />
               </Form.Item>
             </Form>
@@ -59,7 +55,6 @@ const LoginPage: React.FC<RouteComponentProps> = (props) => {
               block
               type="primary"
               htmlType="submit"
-              onClick={loginSubmit}
             >
               로그인
             </Button>
