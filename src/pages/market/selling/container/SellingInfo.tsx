@@ -1,7 +1,7 @@
 import React, { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { Button, Col, Row, Tabs, Affix, Slider } from 'antd';
 import './sellingInfo.css';
-import SellingOption from '@/common/sellingOption/SellingOption';
+import SellingOption from '@/components/sellingOption/SellingOption';
 import usePosition from '@/hooks/usePosition';
 import { OptGroup } from 'rc-select';
 

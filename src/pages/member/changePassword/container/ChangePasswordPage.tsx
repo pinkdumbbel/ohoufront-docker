@@ -1,4 +1,4 @@
-import AppLayout from '@/common/appLayout/AppLayout';
+import AppLayout from '@/components/appLayout/AppLayout';
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import './style.css';

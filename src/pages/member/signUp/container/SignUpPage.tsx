@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 import 'antd/dist/antd.css';
 import './signUp.css';
-import OhousLogin from '@/common/svg/OhousLogin';
+import OhousLogin from '@/components/svg/OhousLogin';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { actions, getState } from '../state';

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import AppLayout from '@/common/appLayout/AppLayout';
+import AppLayout from '@/components/appLayout/AppLayout';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions, getState } from '../state';
 import { useMounted } from '@/hooks';
 import { Tree, Breadcrumb, Layout, Carousel, Card } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
-import carosel1 from '@/common/images/carosel1.png';
-import carosel2 from '@/common/images/carosel2.png';
-import carosel3 from '@/common/images/carosel3.png';
-import carosel4 from '@/common/images/carosel4.png';
+import carosel1 from '@/components/images/carosel1.png';
+import carosel2 from '@/components/images/carosel2.png';
+import carosel3 from '@/components/images/carosel3.png';
+import carosel4 from '@/components/images/carosel4.png';
 
 const CategoryPage: React.FC = () => {
   const { Sider, Content } = Layout;

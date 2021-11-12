@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col, Row, Carousel, Card, Rate, Button } from 'antd';
-import Entry from '@/common/svg/Entry';
+import Entry from '@/components/svg/Entry';
 import './sellingForm.css';
-import SellingOption from '@/common/sellingOption/SellingOption';
+import SellingOption from '@/components/sellingOption/SellingOption';
 
 const SellingForm: React.FC = () => {
   const categorys = ['가구 ', '소파/거실가구 ', '리클라이너 소파 '];

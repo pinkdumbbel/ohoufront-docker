@@ -1,3 +1,4 @@
+import { RootState } from '@/store/store';
 import axios, { AxiosRequestHeaders, AxiosResponse, Method } from 'axios';
 
 // // const BASE_URL = process.env.REACT_APP_BASE_URL;

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import AppLayout from '@/common/appLayout/AppLayout';
+import AppLayout from '@/components/appLayout/AppLayout';
 import SellingForm from './SellingForm';
 import SellingInfo from './SellingInfo';
 import usePosition from '@/hooks/usePosition';

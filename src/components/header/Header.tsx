@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import Logo from '@/common/svg/Logo';
-import Caret from '@/common/svg/Caret';
-import Cart from '@/common/svg/Cart';
-import SearchIcon from '@/common/svg/SearchIcon';
-import Input from '@/common/input/Input';
+import Logo from '@/components/svg/Logo';
+import Caret from '@/components/svg/Caret';
+import Cart from '@/components/svg/Cart';
+import SearchIcon from '@/components/svg/SearchIcon';
+import Input from '@/components/input/Input';
 import './style.css';
 import { Link } from 'react-router-dom';
 
