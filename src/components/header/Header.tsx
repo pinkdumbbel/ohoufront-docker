@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from '@/components/svg/Logo';
-import Caret from '@/components/svg/Caret';
 import Cart from '@/components/svg/Cart';
 import SearchIcon from '@/components/svg/SearchIcon';
 import Input from '@/components/input/Input';
 import './style.css';
 import { Link } from 'react-router-dom';
+import HeaderNavigation from '../headerNavigation/HeaderNavigation';
 
 interface HeaderProps {
   onMounted: () => void;
@@ -63,18 +63,7 @@ const Header: React.FC<HeaderProps> = ({ onMounted }) => {
               <Cart />
             </a>
 
-            <div className="header-navigation-drop-down">
-              <button className="header-navigation-user-button" type="button" onClick={onMounted}>
-                <div className="header-navigation-user-button-img">
-                  <img
-                    className="image"
-                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=72&h=72&c=c"
-                    alt=""
-                  />
-                </div>
-                <Caret />
-              </button>
-            </div>
+            <HeaderNavigation onMounted={onMounted} />
           </div>
         </div>
       </div>

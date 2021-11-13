@@ -7,6 +7,7 @@ import { MyPageFormData } from '@/types/myPage';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/store/store';
 import { actions } from '../state';
+import MyPageFormItem from '@/components/myPageFormItem/MyPageFormItem';
 
 /* import Input from '@/common/Input'; */
 
@@ -28,74 +29,39 @@ const MyPage: React.FC = () => {
         </div>
 
         <Form form={form}>
-          <div className="edit-user-info-form-item">
-            <div className="edit-user-info-form-item-title">
-              이메일
-              <div className="edit-user-info-form-item-title-require"> * 필수항목</div>
+          <MyPageFormItem title="이메일" required={true}>
+            <div className="input-group email-input-wrap">
+              <span className="email-input-local">
+                <Form.Item name="email" noStyle>
+                  <Input size="large" placeholder="이메일" />
+                </Form.Item>
+              </span>
+              <span className="email-input-separator">@</span>
+              <span className="email-input-domain">
+                <Form.Item name="email_domain">
+                  <Select className="form-control-email-domain" size="large">
+                    {emails.map((email) => (
+                      <Select.Option key={email} value={email}>
+                        {email}
+                      </Select.Option>
+                    ))}
+                  </Select>
+                </Form.Item>
+              </span>
             </div>
+          </MyPageFormItem>
 
-            <div className="edit-user-info-form-item-group expert-form-group">
-              <div className="expert-form-group-content">
-                <div className="expert-form-group-input">
-                  <div className="edit-user-info-form-item-field">
-                    <div className="input-group email-input-wrap">
-                      <span className="email-input-local">
-                        <Form.Item name="email" noStyle>
-                          <Input size="large" placeholder="이메일" />
-                        </Form.Item>
-                      </span>
-                      <span className="email-input-separator">@</span>
-                      <span className="email-input-domain">
-                        <Form.Item name="email_domain">
-                          <Select className="form-control-email-domain" size="large">
-                            {emails.map((email) => (
-                              <Select.Option key={email} value={email}>
-                                {email}
-                              </Select.Option>
-                            ))}
-                          </Select>
-                        </Form.Item>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <MyPageFormItem title="별명" required={true}>
+            <Form.Item name="nickname" noStyle>
+              <Input size="large" placeholder="별명" />
+            </Form.Item>
+          </MyPageFormItem>
 
-          <div className="edit-user-info-form-item">
-            <div className="edit-user-info-form-item-title">
-              별명
-              <div className="edit-user-info-form-item-title-require"> * 필수항목</div>
-            </div>
-            <div className="edit-user-info-form-item-group expert-form-group">
-              <div className="expert-form-group-content">
-                <div className="expert-form-group-input">
-                  <div className="edit-user-info-form-item-field">
-                    <Form.Item name="nickname" noStyle>
-                      <Input size="large" placeholder="별명" />
-                    </Form.Item>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="edit-user-info-form-item">
-            <div className="edit-user-info-form-item-title">홈페이지</div>
-
-            <div className="edit-user-info-form-item-group expert-form-group">
-              <div className="expert-form-group-content">
-                <div className="expert-form-group-input">
-                  <div className="edit-user-info-form-item-field">
-                    <Form.Item name="homepage" noStyle>
-                      <Input size="large" placeholder="https://ohou.se" />
-                    </Form.Item>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <MyPageFormItem title="홈페이지" required={true}>
+            <Form.Item name="nickname" noStyle>
+              <Input size="large" placeholder="https://ohou.se" />
+            </Form.Item>
+          </MyPageFormItem>
 
           <div className="edit-user-info-form-item">
             <div className="edit-user-info-form-item-title">성별</div>

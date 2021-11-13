@@ -1,0 +1,16 @@
+.edit-user-info-form-item {
+  display: flex;
+  height: auto;
+}
+
+.edit-user-info-form-item-title {
+  font-size: 15px;
+  padding-top: 30px;
+  width: 100px;
+}
+
+.edit-user-info-form-item-title-require {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #757575;
+}

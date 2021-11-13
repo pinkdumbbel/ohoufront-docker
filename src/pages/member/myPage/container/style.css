@@ -27,23 +27,6 @@ div {
   flex: 1 0 0px;
 }
 
-.edit-user-info-form-item {
-  display: flex;
-  height: auto;
-}
-
-.edit-user-info-form-item-title {
-  font-size: 15px;
-  padding-top: 30px;
-  width: 100px;
-}
-
-.edit-user-info-form-item-title-require {
-  margin-top: 5px;
-  font-size: 13px;
-  color: #757575;
-}
-
 .expert-form-group {
   padding: 25px 0;
 }
@@ -51,10 +34,6 @@ div {
 .edit-user-info-form-item-group {
   max-width: 400px;
   flex: 1 0 0px;
-}
-
-.expert-from-group {
-  padding: 20px 0;
 }
 
 .expert-form-group-gender {
@@ -66,6 +45,7 @@ div {
 
 .input-group {
   flex: 1 0 auto;
+  height: 40px;
 }
 
 .email-input-domain,
@@ -124,13 +104,6 @@ div {
   display: block;
   margin: 0 0 10px;
 }
-
-.edit-user-info-form-item-field-profile,
-.edit-user-info-form-item-field--profile .image-single-input-entry-button {
-  width: 200px;
-  height: 200px;
-}
-
 .image-single-input-entry-button {
   position: relative;
   min-width: 200px;

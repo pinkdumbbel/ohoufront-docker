@@ -1,0 +1,55 @@
+.header-navigation-user-button {
+  display: flex;
+  align-items: center;
+  margin: 15px 0 9px 1.5px;
+  padding: 0;
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: #757575;
+  transition: color 0.1s;
+}
+
+.header-navigation-user-button:hover {
+  color: #35c5f0;
+}
+
+.header-navigation-user-button-img {
+  flex: 0 0 auto;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color 0.1s;
+}
+
+.header-navigation-user-button-img:hover {
+  outline: #35c5f0 auto 1px;
+}
+
+.header-navigation-user-button-img .image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.header-navigation-bar-login {
+  display: inline-block;
+  margin: 20px -9px 16px -7px;
+  white-space: nowrap;
+}
+
+.header-navigation-bar-login-item {
+  position: relative;
+  display: inline-block;
+  margin: 0 9px 0 8px;
+  padding: 2px;
+  color: #757575;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+}

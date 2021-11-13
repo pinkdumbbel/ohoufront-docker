@@ -117,47 +117,22 @@ button {
   color: #757575;
 }
 
+.header-navigation-bar-login-item:first-child::before {
+  display: none;
+}
+
+.header-navigation-bar-login-item::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 100%;
+  bottom: 3px;
+  margin-right: 8px;
+  border-left: 1px solid #757575;
+}
+
 .header-navigation-user-drop-down {
   position: relative;
-}
-
-.header-navigation-user-button {
-  display: flex;
-  align-items: center;
-  margin: 15px 0 9px 1.5px;
-  padding: 0;
-  font-family: inherit;
-  background: none;
-  border: none;
-  color: #757575;
-  transition: color 0.1s;
-}
-
-.header-navigation-user-button:hover {
-  color: #35c5f0;
-}
-
-.header-navigation-user-button-img {
-  flex: 0 0 auto;
-  position: relative;
-  width: 32px;
-  height: 32px;
-  border-radius: 100%;
-  overflow: hidden;
-  border: 2px solid transparent;
-  transition: border-color 0.1s;
-}
-
-.header-navigation-user-button-img:hover {
-  outline: #35c5f0 auto 1px;
-}
-
-.header-navigation-user-button-img .image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
 }
 
 .header-navigation-user-button-caret {

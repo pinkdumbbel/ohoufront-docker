@@ -1,12 +1,16 @@
 import AppLayout from '@/components/appLayout/AppLayout';
 import React from 'react';
 import { Form, Input, Button } from 'antd';
-import './style.css';
-import { ChangePasswordFormData } from '@/types/changePassword';
+import {
+  ChangePasswordFormData,
+  ChangePasswordFormItemProps,
+  ChangePasswordValidateRules,
+} from '@/types/changePassword';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/store/store';
 import { actions } from '../state';
-
+import ChangePasswordFormItem from '@/components/changePasswordFormItem/ChangePasswordFormItem';
+import './style.css';
 const ChangePasswordPage: React.FC = () => {
   const [form] = Form.useForm<ChangePasswordFormData>();
   const dispatch = useDispatch<AppDispatch>();
@@ -21,36 +25,43 @@ const ChangePasswordPage: React.FC = () => {
     <AppLayout>
       <div className="update-passowrd-wrap">
         <h1 className="update-password-title">비밀번호변경</h1>
-        <Form form={form}>
-          <div className="update-password-section">
-            <div className="update-password-section-title">새 비밀번호</div>
-            <div className="update-password-section-sub-title">
-              영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요.
-            </div>
-            <div className="expert-form-group">
-              <div className="expert-form-group-content">
-                <div className="expert-form-group__input">
-                  <Form.Item name="password">
-                    <Input size="large" type="password" />
-                  </Form.Item>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="update-password-section">
-            <div className="update-password-section-title">새 비밀번호 확인</div>
-            <div className="expert-form-group">
-              <div className="expert-form-group-content">
-                <div className="expert-form-group__input">
-                  <Form.Item name="password_confirm">
-                    <Input size="large" type="password" />
-                  </Form.Item>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <Form>
+          <ChangePasswordFormItem title="새 비밀번호" subTitle={true}>
+            <Form.Item
+              name="password"
+              extra="영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요."
+              rules={[
+                {
+                  required: true,
+                  message: '비밀번호를 입력해주세요.',
+                },
+              ]}
+            >
+              <Input size="large" type="password" />
+            </Form.Item>
+          </ChangePasswordFormItem>
+          <ChangePasswordFormItem title="새 비밀번호" subTitle={true}>
+            <Form.Item
+              name="confirm"
+              dependencies={['password']}
+              rules={[
+                {
+                  required: true,
+                  message: '비밀번호를 입력해주세요.',
+                },
+                ({ getFieldValue }) => ({
+                  validator(_, value) {
+                    if (!value || getFieldValue('password') === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(new Error('비밀번호가 일치하지 않습니다.'));
+                  },
+                }),
+              ]}
+            >
+              <Input size="large" type="password" />
+            </Form.Item>
+          </ChangePasswordFormItem>
           <Button type="primary" size="large" onClick={changePasswordSubmit} block>
             비밀번호 변경
           </Button>

@@ -11,7 +11,9 @@ interface AppRouterProps {
   isLoggedIn: boolean;
 }
 
-const AppRouter = ({ isLoggedIn }: AppRouterProps) => {
+const AppRouter: React.FC<AppRouterProps> = ({ isLoggedIn }) => {
+  isLoggedIn = true;
+
   return (
     <Router>
       <Switch>
@@ -23,7 +25,7 @@ const AppRouter = ({ isLoggedIn }: AppRouterProps) => {
             {/* <Route path="/admin" component={} exact/> */}
             <Route path="/changePassword" component={ChangePasswordPage} exact />
             <Route path="/selling" component={SellingPage} exact />
-            <Redirect from="*" to="/main" />
+            {/* <Redirect from="*" to="/main" /> */}
           </>
         ) : (
           <>
