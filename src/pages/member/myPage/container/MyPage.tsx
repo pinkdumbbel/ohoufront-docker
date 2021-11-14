@@ -8,13 +8,13 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/store/store';
 import { actions } from '../state';
 import MyPageFormItem from '@/components/myPageFormItem/MyPageFormItem';
+import { emails } from '@/utils/vars';
 
 /* import Input from '@/common/Input'; */
 
 const MyPage: React.FC = () => {
   const [form] = Form.useForm<MyPageFormData>();
   const dispatch = useDispatch<AppDispatch>();
-  const emails = ['naver.com', 'daum.net', 'gmail.com', '직접입력'];
 
   const myPageSubmit = () => {
     const formData = form.getFieldsValue();

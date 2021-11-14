@@ -1,11 +1,7 @@
 import AppLayout from '@/components/appLayout/AppLayout';
 import React from 'react';
 import { Form, Input, Button } from 'antd';
-import {
-  ChangePasswordFormData,
-  ChangePasswordFormItemProps,
-  ChangePasswordValidateRules,
-} from '@/types/changePassword';
+import { ChangePasswordFormData } from '@/types/changePassword';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/store/store';
 import { actions } from '../state';
