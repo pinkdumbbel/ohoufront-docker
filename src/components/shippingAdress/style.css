@@ -1,0 +1,21 @@
+.shipping-adress-wrap {
+  max-width: 570px;
+  margin-bottom: 8px;
+}
+.shipping-adress-group {
+  display: block;
+}
+.ant-btn {
+  width: 85px;
+  text-align: center;
+  padding: 0;
+}
+
+.shipping-adress-input-wrap {
+  max-width: 270px;
+  display: flex;
+}
+
+.shipping-adress-input {
+  flex: 1 0 0px;
+}
