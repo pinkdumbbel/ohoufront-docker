@@ -34,7 +34,13 @@ const CategoryPage: React.FC = () => {
         <div className="feed-wrap">
           <div className="feed-row">
             <Sider width={300} className="feed-sidebar">
-              <Tree showLine={false} switcherIcon={<DownOutlined />} treeData={categoryTree} onSelect={onSelectTree} />
+              <Tree
+                defaultExpandedKeys={['0', '0_1']}
+                showLine={false}
+                switcherIcon={<DownOutlined />}
+                treeData={categoryTree}
+                onSelect={onSelectTree}
+              />
             </Sider>
             <Content className="feed-content">
               <div className="bread-crumb">

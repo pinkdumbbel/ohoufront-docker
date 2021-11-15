@@ -48,16 +48,16 @@ const LoginPage: React.FC<RouteComponentProps> = (props) => {
               <Form.Item className="login-input" name="password">
                 <Input.Password placeholder="비밀번호" style={{ width: 300 }} />
               </Form.Item>
+              <Button
+                style={{ marginTop: 20, marginBottom: 20, height: 50 }}
+                size="large"
+                block
+                type="primary"
+                htmlType="submit"
+              >
+                로그인
+              </Button>
             </Form>
-            <Button
-              style={{ marginTop: 20, marginBottom: 20, height: 50 }}
-              size="large"
-              block
-              type="primary"
-              htmlType="submit"
-            >
-              로그인
-            </Button>
             <div className="login-form-sub">
               <Button type="text">비밀번호 재설정</Button>
               <Button type="text">
