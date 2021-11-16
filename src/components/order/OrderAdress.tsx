@@ -20,7 +20,7 @@ const OrderAdress: React.FC<OrderAdressProps> = ({ setFields }) => {
       <div className="order-adress-wrap">
         <div className="order-adress-zipcode-group">
           <div className="order-find-adress-btn">
-            <Button type="primary" size="large" ghost onClick={onPostCode}>
+            <Button type="primary" size="large" ghost onClick={onPostCode} className="order-find-adress-btn">
               주소찾기
             </Button>
           </div>
@@ -39,7 +39,7 @@ const OrderAdress: React.FC<OrderAdressProps> = ({ setFields }) => {
 
         <div className="order-detail-adress-input">
           <Form.Item name="orderDetailAdress" noStyle>
-            <Input size="large" />
+            <Input size="large" placeholder="상세 주소를 입력하세요" />
           </Form.Item>
         </div>
       </div>

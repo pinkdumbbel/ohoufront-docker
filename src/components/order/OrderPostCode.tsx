@@ -1,4 +1,5 @@
 import { SetFieldsStateAction } from '@/types/common';
+import { hidefindDOMNodeError } from '@/utils/func';
 import { FieldData } from 'rc-field-form/lib/interface';
 import React from 'react';
 import DaumPostcode from 'react-daum-postcode';
@@ -11,6 +12,8 @@ interface OrderPostCodeProps {
 }
 
 const OrderPostCode: React.FC<OrderPostCodeProps> = (props) => {
+  hidefindDOMNodeError();
+
   const handleComplete = (data: Address) => {
     let fullAddress = data.address;
     let extraAddress = '';
@@ -40,10 +43,6 @@ const OrderPostCode: React.FC<OrderPostCodeProps> = (props) => {
 const postCodeStyle: React.CSSProperties = {
   width: '400px',
   height: '500px',
-  /* display: 'block',
-  width: '400px',
-  height: '500px',
-  padding: '7px', */
 };
 
 export default OrderPostCode;

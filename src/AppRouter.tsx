@@ -13,7 +13,7 @@ interface AppRouterProps {
 }
 
 const AppRouter: React.FC<AppRouterProps> = ({ isLoggedIn }) => {
-  // isLoggedIn = true;
+  isLoggedIn = true;
 
   return (
     <Router>
@@ -27,7 +27,7 @@ const AppRouter: React.FC<AppRouterProps> = ({ isLoggedIn }) => {
             <Route path="/changePassword" component={ChangePasswordPage} exact />
             <Route path="/selling" component={SellingPage} exact />
             <Route path="/order" component={OrderPage} exact />
-            <Redirect from="*" to="/main" />
+            {/* <Redirect from="*" to="/main" /> */}
           </>
         ) : (
           <>
