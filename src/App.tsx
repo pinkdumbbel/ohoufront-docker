@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AppRouter from './AppRouter';
 import { useSelector } from 'react-redux';
 import { getState } from '@/pages/member/login/state';
@@ -12,7 +11,6 @@ const App: React.FC = () => {
   const certifyYn = useSelector((state: RootState) => getState(state).certifyYn);
 
   useEffect(() => {
-    // console.log('certifyYn 변경됐습니다.', certifyYn);
     if (localStorage.getItem('certifyYn')) {
       setIsLoggedIn(true);
     } else {
@@ -21,14 +19,7 @@ const App: React.FC = () => {
     setInit(true);
   }, [certifyYn]);
 
-  return (
-    <>
-      {/* <Router>
-        <Route path="/" component={AppRouter} />
-      </Router> */}
-      {init ? <AppRouter isLoggedIn={isLoggedIn} /> : '초기화'}
-    </>
-  );
+  return <>{init ? <AppRouter isLoggedIn={isLoggedIn} /> : '초기화'}</>;
 };
 
 export default App;

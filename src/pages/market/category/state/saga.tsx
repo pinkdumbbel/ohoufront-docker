@@ -1,5 +1,5 @@
-import { all, call, put, select, takeLatest } from 'redux-saga/effects';
-import { actions, getState } from '.';
+import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { actions } from '.';
 import callApi from '@/api/callApi';
 
 interface payloadType {
