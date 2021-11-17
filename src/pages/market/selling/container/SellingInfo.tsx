@@ -1,9 +1,7 @@
-import React, { RefObject, useCallback, useEffect, useRef, useState } from 'react';
-import { Button, Col, Row, Tabs, Affix, Slider } from 'antd';
+import React from 'react';
+import { Button, Col, Row, Tabs, Affix } from 'antd';
 import './sellingInfo.css';
 import SellingOption from '@/components/sellingOption/SellingOption';
-import usePosition from '@/hooks/usePosition';
-import { OptGroup } from 'rc-select';
 
 interface SellingInfoProps {
   intersect?: number;
@@ -14,8 +12,8 @@ const SellingInfo: React.FC<SellingInfoProps> = () => {
 
   return (
     <>
-      <div className="sticky-container production-selling-navigation-wrap" style={{ position: 'sticky', top: '80px' }}>
-        <div className="sticky-child production-selling-navigation">
+      <div className="production-selling-navigation-wrap" style={{ position: 'sticky', top: '75px' }}>
+        <div className="production-selling-navigation">
           <Tabs defaultActiveKey="1" className="production-selling-navigation-content">
             {tabsTitle.map((tab, i) => (
               <Tabs.TabPane tab={tab} key={i + 1} />

@@ -1,5 +1,6 @@
 import AppLayout from '@/components/appLayout/AppLayout';
 import Order from '@/components/order/Order';
+import OrderPaymentSticky from '@/components/order/OrderPaymentSticky';
 import { FieldData } from '@/types/common';
 import { Form } from 'antd';
 import React, { useState } from 'react';
@@ -19,6 +20,8 @@ const OrderPage: React.FC = () => {
             <Order title="결제 수단" isPayment />
           </Form>
         </div>
+
+        <OrderPaymentSticky />
       </div>
     </AppLayout>
   );
