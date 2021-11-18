@@ -1,0 +1,8 @@
+.sticky-container {
+  position: sticky;
+  top: 81px;
+}
+
+.sticky-child {
+  position: relative;
+}

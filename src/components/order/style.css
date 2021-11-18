@@ -275,15 +275,6 @@
   position: relative;
 }
 
-.sticky-container {
-  position: sticky;
-  top: 81px;
-}
-
-.sticky-child {
-  position: relative;
-}
-
 .order-payment-sticky-content-wrap {
   padding-top: 40px;
 }

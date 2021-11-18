@@ -4,8 +4,6 @@
 }
 
 .production-selling-navigation {
-  position: sticky;
-  top: 80px;
   background-color: #fafafa;
   border-top: 1px solid #ededed;
   border-bottom: 1px solid #ededed;
