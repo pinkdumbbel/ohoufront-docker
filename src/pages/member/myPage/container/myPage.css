@@ -133,3 +133,7 @@ div {
   line-height: 26px;
   height: auto;
 }
+
+.image-single-input-entry-button:hover {
+  opacity: 0.7;
+}

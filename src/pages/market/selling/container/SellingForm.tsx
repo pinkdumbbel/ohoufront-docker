@@ -30,28 +30,28 @@ const SellingForm: React.FC = () => {
                     <img
                       className="production-selling-cover-image-entry-image"
                       alt="example"
-                      src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                      src="https://via.placeholder.com/556x556.png?text=1"
                     />
                   </div>
                   <div className="carousel-list-entry production-selling-cover-image-entry">
                     <img
                       className="production-selling-cover-image-entry-image"
                       alt="example"
-                      src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                      src="https://via.placeholder.com/556x556.png?text=2"
                     />
                   </div>
                   <div className="carousel-list-entry production-selling-cover-image-entry">
                     <img
                       className="production-selling-cover-image-entry-image"
                       alt="example"
-                      src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                      src="https://via.placeholder.com/556x556.png?text=3"
                     />
                   </div>
                   <div className="carousel-list-entry production-selling-cover-image-entry">
                     <img
                       className="production-selling-cover-image-entry-image"
                       alt="example"
-                      src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                      src="https://via.placeholder.com/556x556.png?text=4"
                     />
                   </div>
                 </Carousel>

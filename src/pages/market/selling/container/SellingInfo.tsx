@@ -43,8 +43,11 @@ const SellingInfo: React.FC<SellingInfoProps> = () => {
                 </ul>
 
                 <div className="production-selling-description-content">
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+                  <img alt="example" src="https://via.placeholder.com/692x600.png?text=detail1" />
+                  <img alt="example" src="https://via.placeholder.com/692x600.png?text=detail2" />
+                  <img alt="example" src="https://via.placeholder.com/692x600.png?text=detail3" />
+                  <img alt="example" src="https://via.placeholder.com/692x600.png?text=detail4" />
+                  <img alt="example" src="https://via.placeholder.com/692x600.png?text=detail5" />
                 </div>
               </div>
             </div>
