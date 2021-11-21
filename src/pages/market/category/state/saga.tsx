@@ -1,13 +1,13 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { actions } from '.';
-import callApi from '@/api/callApi';
+import callApi, { callApiNoAuth } from '@/api/callApi';
 
 interface payloadType {
   payload: unknown;
 }
 
 function* getCategoryTree({ payload }: payloadType) {
-  const { status, data } = yield call(callApi, {
+  const { status, data } = yield call(callApiNoAuth, {
     url: '/category',
     method: 'get',
     data: payload,
@@ -19,7 +19,7 @@ function* getCategoryTree({ payload }: payloadType) {
 }
 
 function* getStoreItmes({ payload }: payloadType) {
-  const { status, data } = yield call(callApi, {
+  const { status, data } = yield call(callApiNoAuth, {
     url: '/store',
     method: 'get',
     data: payload,

@@ -21,6 +21,7 @@ const AppRouter: React.FC<AppRouterProps> = ({ isLoggedIn }) => {
       <Switch>
         {isLoggedIn ? (
           <>
+            <Route path="/" component={CategoryPage} exact />
             <Route path="/main" component={CategoryPage} exact />
             <Route path="/myPage" component={MyPage} exact />
             {/* <Route path="/market" component={} exact/> */}

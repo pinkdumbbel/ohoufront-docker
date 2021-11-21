@@ -13,33 +13,10 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onMounted }) => {
-  /* const [style, setStyle] = useState<React.CSSProperties>({ position: 'relative' });
-
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
-      style.position === 'relative' &&
-        setStyle({
-          position: 'fixed',
-          left: '0px',
-          right: '0px',
-          top: '0px',
-        });
-    } else {
-      setStyle({ position: 'relative' });
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [window.scrollY]); */
-
   return (
     <header>
       <Affix offsetTop={0}>
-        <div className="header-navigation" /* style={style} */>
+        <div className="header-navigation">
           <div className="header-navigation-content">
             <div className="header-navigation-left">
               <Link to="/main">
@@ -60,10 +37,6 @@ const Header: React.FC<HeaderProps> = ({ onMounted }) => {
                   </div>
                 </div>
               </div>
-
-              <a href="{() => false}" className="header-navigation-icon">
-                <Cart />
-              </a>
 
               <HeaderNavigation onMounted={onMounted} />
             </div>

@@ -17,7 +17,7 @@ const SellingOption: React.FC = () => {
             <div className="selling-option-item-quantity">
               <Form>
                 <Form.Item name="quantity" initialValue="1">
-                  <Select className="selling-option-item-quantity" size="small">
+                  <Select className="selling-option-item-quantity" size="small" style={{ margin: '0px' }}>
                     {quantity.map((v) => (
                       <Select.Option key={v} value={v} style={{ textAlign: 'center' }}>
                         {v}

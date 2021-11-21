@@ -3,6 +3,7 @@ import { Col, Row, Carousel, Card, Rate, Button } from 'antd';
 import Entry from '@/components/svg/Entry';
 import './sellingForm.css';
 import SellingOption from '@/components/sellingOption/SellingOption';
+import { Link } from 'react-router-dom';
 
 const SellingForm: React.FC = () => {
   const categorys = ['가구 ', '소파/거실가구 ', '리클라이너 소파 '];
@@ -132,12 +133,16 @@ const SellingForm: React.FC = () => {
               </div>
 
               <div className="production-selling-option-form-footer">
-                <Button size="large" className="button">
-                  장바구니
-                </Button>
-                <Button size="large" type="primary">
-                  바로구매
-                </Button>
+                <Link to="/order">
+                  <Button size="large" className="button">
+                    장바구니
+                  </Button>
+                </Link>
+                <Link to="/order">
+                  <Button size="large" type="primary">
+                    바로구매
+                  </Button>
+                </Link>
               </div>
             </div>
           </Col>

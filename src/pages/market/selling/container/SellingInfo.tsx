@@ -5,6 +5,7 @@ import SellingOption from '@/components/sellingOption/SellingOption';
 import usePosition from '@/hooks/usePosition';
 import { OptGroup } from 'rc-select';
 import StickyHeader from '@/components/stickyHeader/stickyHeader';
+import { Link } from 'react-router-dom';
 
 interface SellingInfoProps {
   intersect?: number;
@@ -69,12 +70,16 @@ const SellingInfo: React.FC<SellingInfoProps> = () => {
                       </div>
 
                       <div className="production-selling-option-form-footer">
-                        <Button size="large" className="button">
-                          장바구니
-                        </Button>
-                        <Button size="large" type="primary">
-                          바로구매
-                        </Button>
+                        <Link to="/order">
+                          <Button size="large" className="button">
+                            장바구니
+                          </Button>
+                        </Link>
+                        <Link to="/order">
+                          <Button size="large" type="primary">
+                            바로구매
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </section>
