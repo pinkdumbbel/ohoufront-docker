@@ -135,7 +135,7 @@ const SignUpPage: React.FC<RouteComponentProps> = (props) => {
           </Form>
           <p className="signup-bottom-message">
             이미 아이디가 있으신가요?
-            <NavLink to="/" activeClassName="login-link">
+            <NavLink to="/login" activeClassName="login-link">
               로그인
             </NavLink>
           </p>

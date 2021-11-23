@@ -1,16 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Form, Input, Button } from 'antd';
 import 'antd/dist/antd.css';
 import './login.css';
 import OhousLogin from '@/components/svg/OhousLogin';
-import { actions, getState } from '../state';
-import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router';
+import { actions } from '../state';
+import { useDispatch } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { AppDispatch, RootState } from '@/store/store';
+import { AppDispatch } from '@/store/store';
 import { LoginFormData } from '@/types/login';
-import { LocationState } from '@/types/common';
 import { hidefindDOMNodeError } from '@/utils/func';
 
 const LoginPage: React.FC<RouteComponentProps> = (props) => {
