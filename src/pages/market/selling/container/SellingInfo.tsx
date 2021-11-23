@@ -12,11 +12,11 @@ interface SellingInfoProps {
 }
 
 const SellingInfo: React.FC<SellingInfoProps> = () => {
-  const tabsTitle = ['상품정보', '리뷰', '문의', '배송/환불'];
+  /* const tabsTitle = ['상품정보', '리뷰', '문의', '배송/환불']; */
 
   return (
     <>
-      <StickyHeader
+      {/* <StickyHeader
         top={80}
         className="production-selling-navigation-wrap"
         childClassName="sticky-child production-selling-navigation"
@@ -26,7 +26,10 @@ const SellingInfo: React.FC<SellingInfoProps> = () => {
             <Tabs.TabPane tab={tab} key={i + 1} />
           ))}
         </Tabs>
-      </StickyHeader>
+      </StickyHeader> */}
+      <div className="production-selling-navigation-wrap">
+        <div className="production-selling-navigation" style={{ height: '50px' }}></div>
+      </div>
 
       <div className="production-selling-detail-wrap container">
         <Row>

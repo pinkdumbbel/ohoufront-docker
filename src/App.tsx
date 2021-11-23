@@ -3,6 +3,7 @@ import AppRouter from './AppRouter';
 import { useSelector } from 'react-redux';
 import { getState } from '@/pages/member/login/state';
 import { RootState } from '@/store/store';
+import { getStorageItem } from './utils/func';
 
 const App: React.FC = () => {
   // 로그인 성공했는지 관리

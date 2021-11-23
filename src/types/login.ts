@@ -1,7 +1,8 @@
 export interface LoginResponseData {
-  status: number;
+  status: 200;
   data: {
     data: {
+      id: number;
       AccessToken: string;
     };
   };

@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/store/store';
 import { actions } from '../state';
 import ChangePasswordFormItem from '@/components/changePasswordFormItem/ChangePasswordFormItem';
-import './style.css';
+import './changePassword.css';
 const ChangePasswordPage: React.FC = () => {
   const [form] = Form.useForm<ChangePasswordFormData>();
   const dispatch = useDispatch<AppDispatch>();
@@ -36,7 +36,7 @@ const ChangePasswordPage: React.FC = () => {
               <Input size="large" type="password" />
             </Form.Item>
           </ChangePasswordFormItem>
-          <ChangePasswordFormItem title="새 비밀번호" subTitle={true}>
+          <ChangePasswordFormItem title="새 비밀번호 확인" subTitle={true}>
             <Form.Item
               name="confirm"
               dependencies={['password']}
