@@ -1,124 +1,48 @@
 import React from 'react';
-import { Table, Tag, Space, Layout } from 'antd';
+import { Modal, Table, Space, Layout, Button } from 'antd';
 import AppLayout from '@/components/appLayout/AppLayout';
+import { useSelector } from 'react-redux';
+import { getState } from '../state';
+import './style.css';
 
 const UserManagePage: React.FC = (props) => {
-  const { Column, ColumnGroup } = Table;
-  const { Sider, Content } = Layout;
-  const data = [
-    {
-      key: '1',
-      firstName: 'John',
-      lastName: 'Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-      tags: ['nice', 'developer'],
-    },
-    {
-      key: '2',
-      firstName: 'Jim',
-      lastName: 'Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-      tags: ['loser'],
-    },
-    {
-      key: '3',
-      firstName: 'Joe',
-      lastName: 'Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '3',
-      firstName: 'Joe',
-      lastName: 'Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '3',
-      firstName: 'Joe',
-      lastName: 'Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '3',
-      firstName: 'Joe',
-      lastName: 'Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '3',
-      firstName: 'Joe',
-      lastName: 'Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '3',
-      firstName: 'Joe',
-      lastName: 'Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    {
-      key: '3',
-      firstName: 'Joe',
-      lastName: 'Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-  ];
+  const { Column } = Table;
+  const { Content } = Layout;
+  const list = useSelector((state) => getState(state).userList);
+
+  const warning = () => {
+    Modal.warning({
+      title: '유저탈퇴',
+      content: '선택한 유저를 탈퇴시키시겠습니까?',
+    });
+  };
+
   return (
     <>
       <AppLayout>
         <div className="feed-container">
           <div className="feed-wrap">
-            <div className="feed-row">
-              <Content className="feed-content">
-                <Table dataSource={data}>
-                  <ColumnGroup title="Name">
-                    <Column title="First Name" dataIndex="firstName" key="firstName" />
-                    <Column title="Last Name" dataIndex="lastName" key="lastName" />
-                  </ColumnGroup>
-                  <Column title="Age" dataIndex="age" key="age" />
-                  <Column title="Address" dataIndex="address" key="address" />
-                  <Column
-                    title="Tags"
-                    dataIndex="tags"
-                    key="tags"
-                    render={(tags) => (
-                      <>
-                        {tags.map((tag: any) => (
-                          <Tag color="blue" key={tag}>
-                            {tag}
-                          </Tag>
-                        ))}
-                      </>
-                    )}
-                  />
-                  <Column
-                    title="Action"
-                    key="action"
-                    render={(text, record) => (
-                      <Space size="middle">
-                        <a>Invite</a>
-                        <a>Delete</a>
-                      </Space>
-                    )}
-                  />
-                </Table>
-              </Content>
+            <div className="userManage-container">
+              <div className="feed-row">
+                <Content className="feed-content">
+                  <Table dataSource={list}>
+                    <Column title="이메일" dataIndex="email" key="email" />
+                    <Column title="닉네임" dataIndex="nickname" key="nickname" />
+                    <Column
+                      title="Action"
+                      key="action"
+                      render={() => (
+                        <Space size="middle">
+                          <Button>상세</Button>
+                          <Button danger onClick={warning}>
+                            탈퇴
+                          </Button>
+                        </Space>
+                      )}
+                    />
+                  </Table>
+                </Content>
+              </div>
             </div>
           </div>
         </div>

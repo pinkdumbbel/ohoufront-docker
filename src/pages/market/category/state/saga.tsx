@@ -1,6 +1,6 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { actions } from '.';
-import callApi, { callApiNoAuth } from '@/api/callApi';
+import { callApiNoAuth } from '@/api/callApi';
 
 interface payloadType {
   payload: unknown;
@@ -8,7 +8,7 @@ interface payloadType {
 
 function* getCategoryTree({ payload }: payloadType) {
   const { status, data } = yield call(callApiNoAuth, {
-    url: '/category',
+    url: '/category?page=1&category=0',
     method: 'get',
     data: payload,
   });
