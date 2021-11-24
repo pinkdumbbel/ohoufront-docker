@@ -9,8 +9,10 @@ import { RouteComponentProps } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { AppDispatch } from '@/store/store';
 import { LoginFormData } from '@/types/login';
+import { hidefindDOMNodeError } from '@/utils/func';
 
 const LoginPage: React.FC<RouteComponentProps> = (props) => {
+  hidefindDOMNodeError();
   const [form] = Form.useForm<LoginFormData>();
   const dispatch = useDispatch<AppDispatch>();
 

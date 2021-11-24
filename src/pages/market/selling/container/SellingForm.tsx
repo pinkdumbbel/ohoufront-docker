@@ -95,10 +95,10 @@ const SellingForm: React.FC = () => {
               </h1>
 
               <div className="production-selling-header-content production-selling-header-content-deal">
-                <div className="production-selling-header-review-wrap">
+                {/* <div className="production-selling-header-review-wrap">
                   <Rate allowHalf defaultValue={4.5} disabled style={{ color: '#35c5f0' }} />
                   <span className="production-selling-header-review-text">264개 리뷰</span>
-                </div>
+                </div> */}
                 <div className="production-selling-header-price">
                   <span className="production-selling-header-price-price-wrap">
                     <span className="production-selling-header-price-price">

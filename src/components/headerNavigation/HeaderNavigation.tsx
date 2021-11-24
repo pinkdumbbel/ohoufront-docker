@@ -5,13 +5,14 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Caret from '@/components/svg/Caret';
 import './style.css';
+import { getStorageItem } from '@/utils/func';
 
 interface HeaderNavigationProps {
   onMounted: () => void;
 }
 
 const HeaderNavigation: React.FC<HeaderNavigationProps> = ({ onMounted }) => {
-  const certifyYn = useSelector((state: RootState) => getState(state).certifyYn);
+  const certifyYn = getStorageItem('certifyYn');
 
   return (
     <>
