@@ -1,6 +1,5 @@
 import React from 'react';
 import { Modal as ModalBox } from 'antd';
-import './style.css';
 
 interface ModalProps {
   showModal: boolean;
@@ -16,7 +15,15 @@ const Modal: React.FC<ModalProps> = ({ children, showModal, setShowPostCode }) =
   };
 
   return (
-    <ModalBox visible={showModal} onOk={handleOk} onCancel={handleCancel} footer={null}>
+    <ModalBox
+      visible={showModal}
+      onOk={handleOk}
+      onCancel={handleCancel}
+      footer={null}
+      className="aaaaa"
+      closable={false}
+      bodyStyle={{ padding: '0px' }}
+    >
       {children}
     </ModalBox>
   );

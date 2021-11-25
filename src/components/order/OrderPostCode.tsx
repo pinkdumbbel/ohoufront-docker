@@ -41,7 +41,7 @@ const OrderPostCode: React.FC<OrderPostCodeProps> = (props) => {
 };
 
 const postCodeStyle: React.CSSProperties = {
-  width: '400px',
+  width: '100%',
   height: '500px',
 };
 
