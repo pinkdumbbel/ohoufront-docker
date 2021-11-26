@@ -1,22 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.3764f639.chunk.css",
-    "main.js": "/static/js/main.ab845e9e.chunk.js",
-    "main.js.map": "/static/js/main.ab845e9e.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2fad4555.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2fad4555.js.map",
-    "static/js/2.75474e8e.chunk.js": "/static/js/2.75474e8e.chunk.js",
-    "static/js/2.75474e8e.chunk.js.map": "/static/js/2.75474e8e.chunk.js.map",
-    "static/js/3.2bc15c2b.chunk.js": "/static/js/3.2bc15c2b.chunk.js",
-    "static/js/3.2bc15c2b.chunk.js.map": "/static/js/3.2bc15c2b.chunk.js.map",
+    "main.css": "/static/css/main.6d4eefd4.chunk.css",
+    "main.js": "/static/js/main.7e0fa716.chunk.js",
+    "main.js.map": "/static/js/main.7e0fa716.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.1834382e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.1834382e.js.map",
+    "static/css/2.a95be28f.chunk.css": "/static/css/2.a95be28f.chunk.css",
+    "static/js/2.28914015.chunk.js": "/static/js/2.28914015.chunk.js",
+    "static/js/2.28914015.chunk.js.map": "/static/js/2.28914015.chunk.js.map",
+    "static/js/3.cf781f54.chunk.js": "/static/js/3.cf781f54.chunk.js",
+    "static/js/3.cf781f54.chunk.js.map": "/static/js/3.cf781f54.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.3764f639.chunk.css.map": "/static/css/main.3764f639.chunk.css.map",
-    "static/js/2.75474e8e.chunk.js.LICENSE.txt": "/static/js/2.75474e8e.chunk.js.LICENSE.txt"
+    "static/css/2.a95be28f.chunk.css.map": "/static/css/2.a95be28f.chunk.css.map",
+    "static/css/main.6d4eefd4.chunk.css.map": "/static/css/main.6d4eefd4.chunk.css.map",
+    "static/js/2.28914015.chunk.js.LICENSE.txt": "/static/js/2.28914015.chunk.js.LICENSE.txt",
+    "static/media/carosel1.b2666ca8.png": "/static/media/carosel1.b2666ca8.png",
+    "static/media/carosel2.a93639a6.png": "/static/media/carosel2.a93639a6.png",
+    "static/media/carosel3.f466864b.png": "/static/media/carosel3.f466864b.png",
+    "static/media/carosel4.c477d090.png": "/static/media/carosel4.c477d090.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.2fad4555.js",
-    "static/js/2.75474e8e.chunk.js",
-    "static/css/main.3764f639.chunk.css",
-    "static/js/main.ab845e9e.chunk.js"
+    "static/js/runtime-main.1834382e.js",
+    "static/css/2.a95be28f.chunk.css",
+    "static/js/2.28914015.chunk.js",
+    "static/css/main.6d4eefd4.chunk.css",
+    "static/js/main.7e0fa716.chunk.js"
   ]
 }
