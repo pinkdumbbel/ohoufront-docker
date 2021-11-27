@@ -1,7 +1,7 @@
 import { RootState } from '@/store/store';
 import axios, { AxiosRequestHeaders, AxiosResponse, Method } from 'axios';
 
-// // const BASE_URL = process.env.REACT_APP_BASE_URL;
+//const BASE_URL = process.env.REACT_APP_BASE_URL;
 const BASE_URL = 'http://ec2-3-34-43-140.ap-northeast-2.compute.amazonaws.com:8080';
 
 interface callApiPramsType {

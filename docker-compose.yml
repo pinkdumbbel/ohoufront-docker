@@ -1,11 +1,11 @@
-version: '3'
+version: '3.7'
 services:
   ohou-frontend:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/app
+      - /app/ohou-frontend/node_modules
+      - .:/app/ohou-frontend
     ports:
-      - '3001:3001'
-    stdin_open: true
+      - '80:80'

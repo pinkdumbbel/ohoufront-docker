@@ -28,6 +28,7 @@ const CategoryPage: React.FC = () => {
     console.log('selected', selectedKeys, info);
   };
 
+  console.log(process.env.REACT_APP_BACK_URL);
   return (
     <AppLayout>
       <div className="feed-container">

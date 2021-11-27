@@ -31,7 +31,7 @@ const HeaderNavigation: React.FC<HeaderNavigationProps> = ({ onMounted }) => {
         </div>
       ) : (
         <div className="header-navigation-bar-login">
-          <Link to="/" className="header-navigation-bar-login-item">
+          <Link to="/login" className="header-navigation-bar-login-item">
             로그인
           </Link>
           <Link to="/signUp" className="header-navigation-bar-login-item">
